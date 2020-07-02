@@ -5,26 +5,39 @@ using UnityEngine.AI;
 public class TileScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    /*
     private Color og;
     private Color rangeColor;
     private Color activeColor;
-    private Material mat;
-    private bool inRange;
+    private Color dangerColor;
+    private Color coverColor;
+    */
+    public List<Color> ucolors = new List<Color>();
+    public Material mat;
+    public bool inRange;
     private int state;
     private PlayerControl pc;
     private NavMeshPath path;
     public GameObject centerPoint;
     public GameObject iconObj;
     public int tileType;
+    public bool taken;
     void Start()
     {
-        mat = GetComponent<Renderer>().material;
-        og = new Color(mat.color.r, mat.color.g, mat.color.b, mat.color.a);
-        rangeColor = new Color(mat.color.r, mat.color.g, mat.color.b, 0.25f);
-        activeColor = new Color(mat.color.r, mat.color.g, mat.color.b, 0.8f);
+
+
     }
     private void Awake()
     {
+        mat = GetComponent<Renderer>().material;
+        Color[] cols = {
+            new Color(mat.color.r, mat.color.g, mat.color.b, mat.color.a),
+            new Color(mat.color.r, mat.color.g, mat.color.b, 0.35f),
+            new Color(mat.color.r, mat.color.g, mat.color.b, 0.85f),
+            new Color(0.85f, 0, 0, 1f),
+            new Color(0, 0, 0.85f, 1f)
+        };
+        ucolors.AddRange(cols);
         pc = PlayerControl.Instance;
         pc.CheckTiles += CheckState;
     }
@@ -36,10 +49,13 @@ public class TileScript : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (inRange)
+        if (inRange && !taken && pc.playerTurn)
         {
+            if (pc.currentTile)
+                pc.currentTile.taken = false;
             pc.MovePlayer(transform.position);
-            pc.ctile = this;
+            pc.currentTile = this;
+            taken = true;
         }
     }
     private void OnMouseEnter()
@@ -79,7 +95,7 @@ public class TileScript : MonoBehaviour
     }
     public void CheckState()
     {
-        inRange = CheckRange();
+        inRange = CheckPcRange();
         if (state != -1)
         {
             if (pc.moving)
@@ -88,14 +104,13 @@ public class TileScript : MonoBehaviour
             }
             else
             {
-                if (inRange)
+
+                if (inRange && !taken && pc.playerTurn)
                     ChangeState(1);
                 else
                     ChangeState(0);
             }
-
         }
-
     }
     public void ChangeState(int s)
     {
@@ -108,23 +123,30 @@ public class TileScript : MonoBehaviour
         }
         else if (state == 0)
         {
-            mat.color = og;
+            ChangeColor(0);
             inRange = false;
             centerPoint.SetActive(false);
         }
         else if (state == 1)
         {
-            mat.color = rangeColor;
+            ChangeColor(1);
             inRange = true;
             centerPoint.SetActive(false);
+            if (tileType == 1)
+                ChangeColor(4);
+
         }
         else if (state == 2)
         {
-            mat.color = activeColor;
+            ChangeColor(2);
             centerPoint.SetActive(true);
             if (path.corners.Length > 0)
                 pc.PathLine(path);
         }
+    }
+    public void ChangeColor(int i)
+    {
+        mat.color = ucolors[i];
     }
     public float CalcPathDistance(NavMeshPath path)
     {
@@ -138,15 +160,15 @@ public class TileScript : MonoBehaviour
         return sum;
     }
 
-    public bool CheckRange()
+    public bool CheckRange(float range, NavMeshAgent agent, Transform unit)
     {
-        float r = pc.range;
-        float maxDistance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(pc.transform.position.x, 0, pc.transform.position.z));
+        float r = range;
+        float maxDistance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(unit.transform.position.x, 0, unit.transform.position.z));
 
         if (maxDistance <= r)
         {
             path = new NavMeshPath();
-            pc.agent.CalculatePath(transform.position, path);
+            agent.CalculatePath(transform.position, path);
             float distance = CalcPathDistance(path);
             //Debug.Log($"Distance {distance:F2} of {gameObject.name}");
             if (distance < r)
@@ -164,5 +186,9 @@ public class TileScript : MonoBehaviour
         //Debug.Log($"{distance} of {gameObject.name}");
         //Debug.Log(distance);
 
+    }
+    public bool CheckPcRange()
+    {
+        return CheckRange(pc.range, pc.agent, pc.transform);
     }
 }

@@ -25,24 +25,27 @@ public class PlayerControl : MonoBehaviour
     public CapsuleCollider rangeColl;
     public bool moving;
     private LineRenderer line;
-    public TileScript ctile;
+    public TileScript currentTile;
     public WeaponClass weapon;
     public UnitStats stats;
+    public bool playerTurn;
 
 
     void Start()
     {
+        playerTurn = true;
         agent = GetComponent<NavMeshAgent>();
         line = GetComponent<LineRenderer>();
         rangeColl.radius = range;
-        StartCoroutine(MoveCheck());
+        TileCheck();
+        //StartCoroutine(MoveCheck());
     }
     public void MovePlayer(Vector3 pos)
     {
-        if (!moving && agent.enabled == true)
+        if (!moving && agent.enabled == true && playerTurn)
         {
             moving = true;
-            if (CheckTiles != null) CheckTiles.Invoke();
+            TileCheck();
             ResetPath();
             agent.SetDestination(pos);
             StartCoroutine(MoveCheck());
@@ -53,7 +56,18 @@ public class PlayerControl : MonoBehaviour
         yield return new WaitForEndOfFrame();
         while (agent.remainingDistance != 0)
             yield return null;
+        playerTurn = false;
         moving = false;
+        TileCheck();
+        EndTurn();
+    }
+    public void EndTurn()
+    {
+        EnemyScript enem = FindObjectOfType<EnemyScript>();
+        enem.StartTurn();
+    }
+    public void TileCheck()
+    {
         if (CheckTiles != null) CheckTiles.Invoke();
     }
     public void PathLine(NavMeshPath path)
