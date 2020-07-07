@@ -17,7 +17,10 @@ public class PlayerControl : MonoBehaviour
     public UnitStats stats;
     public bool playerTurn;
     public MainControl mc;
-
+    public class MoveSet
+    {
+        
+    }
 
     void Start()
     {
@@ -46,7 +49,6 @@ public class PlayerControl : MonoBehaviour
         yield return new WaitForEndOfFrame();
         while (agent.remainingDistance != 0)
             yield return null;
-        mc.playerTurn = false;
         moving = false;
         mc.TileCheck();
         mc.ui.turn.interactable = true;
@@ -56,7 +58,11 @@ public class PlayerControl : MonoBehaviour
     public void EndTurn()
     {
         if (!moving)
+        {
+            mc.playerTurn = false;
             mc.NextTurn();
+        }
+
     }
     public void TileCheck()
     {
