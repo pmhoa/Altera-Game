@@ -11,10 +11,6 @@ public class Tiles : MonoBehaviour
     public GameObject tile;
     public float zsize;
     public float xsize;
-    void Start()
-    {
-
-    }
     public void SpawnTiles()
     {
         plane = transform;

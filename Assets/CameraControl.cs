@@ -15,31 +15,36 @@ public class CameraControl : MonoBehaviour
     private string mouseXInputName, mouseYInputName;
     public float mouseSensitivity;
     public Transform rotatorObj;
-    private PlayerControl pc;
+    public PlayerControl pc;
+    public MainControl mc;
     private UserInterface ui;
-    
+
     private void Start()
     {
         offset = zoomedOut;
         zoom = false;
         mouseXInputName = "Mouse X";
         mouseYInputName = "Mouse Y";
-        pc = PlayerControl.Instance;
         ui = UserInterface.Instance;
+        mc = MainControl.Instance;
     }
     void Update()
     {
+
         if (!personCam)
             transform.position = follow.transform.position + offset;
         else
         {
             CameraRotation();
         }
-        //CameraRotation();
-        if (Input.GetMouseButtonDown(1))
+        if (mc.playerTurn)
         {
-            ChangeCam();
+            if (Input.GetMouseButtonDown(1))
+            {
+                ChangeCam();
+            }
         }
+
     }
     private void FixedUpdate()
     {

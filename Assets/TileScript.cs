@@ -16,17 +16,13 @@ public class TileScript : MonoBehaviour
     public Material mat;
     public bool inRange;
     private int state;
-    private PlayerControl pc;
+    public PlayerControl currentPc;
+    private MainControl mc;
     private NavMeshPath path;
     public GameObject centerPoint;
     public GameObject iconObj;
     public int tileType;
     public bool taken;
-    void Start()
-    {
-
-
-    }
     private void Awake()
     {
         mat = GetComponent<Renderer>().material;
@@ -38,8 +34,8 @@ public class TileScript : MonoBehaviour
             new Color(0, 0, 0.85f, 1f)
         };
         ucolors.AddRange(cols);
-        pc = PlayerControl.Instance;
-        pc.CheckTiles += CheckState;
+        mc = MainControl.Instance;
+        mc.CheckTiles += CheckState;
     }
     // Update is called once per frame
     void Update()
@@ -49,12 +45,12 @@ public class TileScript : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (inRange && !taken && pc.playerTurn)
+        if (inRange && !taken)
         {
-            if (pc.currentTile)
-                pc.currentTile.taken = false;
-            pc.MovePlayer(transform.position);
-            pc.currentTile = this;
+            if (currentPc.currentTile)
+                currentPc.currentTile.taken = false;
+            currentPc.MovePlayer(transform.position);
+            currentPc.currentTile = this;
             taken = true;
         }
     }
@@ -95,17 +91,19 @@ public class TileScript : MonoBehaviour
     }
     public void CheckState()
     {
-        inRange = CheckPcRange();
+        currentPc = mc.currentPc;
+        //Debug.Log("state checked");
+        inRange = CheckPcRange(currentPc);
         if (state != -1)
         {
-            if (pc.moving)
+            if (currentPc.moving)
             {
                 ChangeState(0);
             }
             else
             {
 
-                if (inRange && !taken && pc.playerTurn)
+                if (inRange && !taken && mc.playerTurn)
                     ChangeState(1);
                 else
                     ChangeState(0);
@@ -114,34 +112,37 @@ public class TileScript : MonoBehaviour
     }
     public void ChangeState(int s)
     {
-        state = s;
-        if (state == -1)
+        if (currentPc)
         {
-            gameObject.SetActive(false);
-            pc.CheckTiles -= CheckState;
-            centerPoint.SetActive(false);
-        }
-        else if (state == 0)
-        {
-            ChangeColor(0);
-            inRange = false;
-            centerPoint.SetActive(false);
-        }
-        else if (state == 1)
-        {
-            ChangeColor(1);
-            inRange = true;
-            centerPoint.SetActive(false);
-            if (tileType == 1)
-                ChangeColor(4);
+            state = s;
+            if (state == -1)
+            {
+                gameObject.SetActive(false);
+                currentPc.CheckTiles -= CheckState;
+                centerPoint.SetActive(false);
+            }
+            else if (state == 0)
+            {
+                ChangeColor(0);
+                inRange = false;
+                centerPoint.SetActive(false);
+            }
+            else if (state == 1)
+            {
+                ChangeColor(1);
+                inRange = true;
+                centerPoint.SetActive(false);
+                if (tileType == 1)
+                    ChangeColor(4);
 
-        }
-        else if (state == 2)
-        {
-            ChangeColor(2);
-            centerPoint.SetActive(true);
-            if (path.corners.Length > 0)
-                pc.PathLine(path);
+            }
+            else if (state == 2)
+            {
+                ChangeColor(2);
+                centerPoint.SetActive(true);
+                if (path.corners.Length > 0)
+                    currentPc.PathLine(path);
+            }
         }
     }
     public void ChangeColor(int i)
@@ -187,7 +188,7 @@ public class TileScript : MonoBehaviour
         //Debug.Log(distance);
 
     }
-    public bool CheckPcRange()
+    public bool CheckPcRange(PlayerControl pc)
     {
         return CheckRange(pc.range, pc.agent, pc.transform);
     }

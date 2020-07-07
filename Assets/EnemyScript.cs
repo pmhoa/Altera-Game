@@ -11,12 +11,14 @@ public class EnemyScript : MonoBehaviour
     public List<TileScript> tilesInRange;
     public TileScript currentTile;
     public NavMeshAgent agent;
-    public PlayerControl pc;
+    public MainControl mc;
 
 
     private void Start()
     {
-        pc = PlayerControl.Instance;
+        mc = MainControl.Instance;
+        stats.obj = gameObject;
+
     }
     public void FindTiles()
     {
@@ -38,28 +40,24 @@ public class EnemyScript : MonoBehaviour
     public IEnumerator MoveRotation()
     {
         yield return new WaitForSeconds(1f);
-        if (!pc.playerTurn)
+        agent.ResetPath();
+        FindTiles();
+        if (currentTile)
         {
-            agent.ResetPath();
-            FindTiles();
-            if (currentTile)
-            {
-                currentTile.taken = false;
-                if (currentTile.inRange)
-                    currentTile.ChangeState(1);
-                else
-                    currentTile.ChangeState(0);
-            }
-            currentTile = tilesInRange[Random.Range(0, tilesInRange.Count)];
-            currentTile.taken = true;
-            currentTile.ChangeColor(3);
-            Transform movePoint = currentTile.transform;
-            agent.SetDestination(movePoint.position);
-            yield return new WaitForEndOfFrame();
-            while (agent.remainingDistance != 0)
-                yield return null;
-            pc.playerTurn = true;
-            pc.TileCheck();
+            currentTile.taken = false;
+            if (currentTile.inRange)
+                currentTile.ChangeState(1);
+            else
+                currentTile.ChangeState(0);
         }
+        currentTile = tilesInRange[Random.Range(0, tilesInRange.Count)];
+        currentTile.taken = true;
+        currentTile.ChangeColor(3);
+        Transform movePoint = currentTile.transform;
+        agent.SetDestination(movePoint.position);
+        yield return new WaitForSeconds(0.5f);
+        while (agent.remainingDistance != 0)
+            yield return null;
+        mc.NextTurn();
     }
 }

@@ -5,44 +5,34 @@ using UnityEngine.AI;
 
 public class PlayerControl : MonoBehaviour
 {
-    private static PlayerControl _instance { get; set; }
-    public static PlayerControl Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<PlayerControl>();
-            }
-
-            return _instance;
-        }
-    }
     public delegate void PlayerEvents();
     public PlayerEvents CheckTiles;
     public NavMeshAgent agent;
     public float range;
-    public CapsuleCollider rangeColl;
+    //public CapsuleCollider rangeColl;
     public bool moving;
     private LineRenderer line;
     public TileScript currentTile;
     public WeaponClass weapon;
     public UnitStats stats;
     public bool playerTurn;
+    public MainControl mc;
 
 
     void Start()
     {
-        playerTurn = true;
         agent = GetComponent<NavMeshAgent>();
         line = GetComponent<LineRenderer>();
-        rangeColl.radius = range;
+        //rangeColl.radius = range;
         TileCheck();
+        stats.pcontrol = true;
+        stats.obj = gameObject;
+        mc = MainControl.Instance;
         //StartCoroutine(MoveCheck());
     }
     public void MovePlayer(Vector3 pos)
     {
-        if (!moving && agent.enabled == true && playerTurn)
+        if (!moving && agent.enabled == true)
         {
             moving = true;
             TileCheck();
@@ -56,15 +46,17 @@ public class PlayerControl : MonoBehaviour
         yield return new WaitForEndOfFrame();
         while (agent.remainingDistance != 0)
             yield return null;
-        playerTurn = false;
+        mc.playerTurn = false;
         moving = false;
-        TileCheck();
-        EndTurn();
+        mc.TileCheck();
+        mc.ui.turn.interactable = true;
+
+        //EndTurn();
     }
     public void EndTurn()
     {
-        EnemyScript enem = FindObjectOfType<EnemyScript>();
-        enem.StartTurn();
+        if (!moving)
+            mc.NextTurn();
     }
     public void TileCheck()
     {
