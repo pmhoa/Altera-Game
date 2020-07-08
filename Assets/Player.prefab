@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 8869721157568009304}
   m_Layer: 2
   m_Name: Rotator
-  m_TagString: Untagged
+  m_TagString: Rotator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,7 +340,6 @@ MonoBehaviour:
   agent: {fileID: 0}
   range: 4.1
   moving: 0
-  currentTile: {fileID: 0}
   weapon:
     accuracy: 3
     baseDmg: 0
@@ -350,14 +349,11 @@ MonoBehaviour:
     - 7
     - 10
     - 14
-    speed: 60
+    speed: 4
   stats:
-    obj: {fileID: 0}
-    pcontrol: 0
+    hp: 0
     aim: 3
     dodge: 0
-  playerTurn: 1
-  mc: {fileID: 0}
   bulletPf: {fileID: 8140414603763567815, guid: e5bf8fce82804e54683f544277b5b763,
     type: 3}
   bulletPoint: {fileID: 9042535841386597460}
@@ -622,7 +618,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 6f4fc13f02353da4c8270b6d2efa1ad6,
         type: 3}
       propertyPath: m_Name
-      value: MaleChara1.6 (1)
+      value: Model
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 6f4fc13f02353da4c8270b6d2efa1ad6,
         type: 3}
@@ -702,7 +698,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 602482f6ed0e25142beb3375479fae3b,
         type: 3}
       propertyPath: m_Name
-      value: rifle (1)
+      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 602482f6ed0e25142beb3375479fae3b, type: 3}

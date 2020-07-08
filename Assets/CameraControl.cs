@@ -41,7 +41,7 @@ public class CameraControl : MonoBehaviour
         }
         if (mc.playerTurn)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) && !camLock)
             {
                 ChangeCam();
             }
@@ -58,7 +58,7 @@ public class CameraControl : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Enemy")
                 {
                     TargetPart tp = hit.transform.GetComponent<TargetPart>();
-                    float hitchange = pc.HitChange(pc.stats.aim, pc.weapon.accuracy, pc.HitRange(pc.weapon, hit.transform), tp.parent.stats.dodge) * tp.hitMultiplier;
+                    float hitchange = pc.HitChange(pc.stats.Aim, pc.weapon.accuracy, pc.HitRange(pc.weapon, hit.transform), tp.parent.stats.Dodge) * tp.hitMultiplier;
                     ui.targetText.text = $"{tp.partName} {hitchange * 100:F1}%";
                     ui.targetText.color = new Color32(240, 100, 100, 255);
                 }

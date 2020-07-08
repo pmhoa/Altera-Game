@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 525000714810966028}
   - component: {fileID: 525000714810966029}
   - component: {fileID: 1184115784338461368}
+  - component: {fileID: 9211123317097937030}
   m_Layer: 0
   m_Name: Enemy Head
   m_TagString: Enemy
@@ -40,7 +41,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525000714810966031}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.28220582, y: 0.29954296, z: 0.3338672}
@@ -60,6 +61,22 @@ MonoBehaviour:
   parent: {fileID: 0}
   partName: Head
   hitMultiplier: 0.65
+--- !u!54 &9211123317097937030
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525000714810966031}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &525000714880404277
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +88,7 @@ GameObject:
   - component: {fileID: 525000714880404282}
   - component: {fileID: 525000714880404283}
   - component: {fileID: 4247309773804733081}
+  - component: {fileID: 6750166224579351221}
   m_Layer: 0
   m_Name: Enemy Body
   m_TagString: Enemy
@@ -100,7 +118,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525000714880404277}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.51437986, y: 0.3505301, z: 1.6907766}
@@ -120,6 +138,22 @@ MonoBehaviour:
   parent: {fileID: 0}
   partName: Body
   hitMultiplier: 1
+--- !u!54 &6750166224579351221
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525000714880404277}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5808763105416901698
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,11 +233,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    hp: 0
     aim: 0
     dodge: 10
   moveRange: 3
   tilesInRange: []
+  currentTile: {fileID: 0}
   agent: {fileID: 8296172667855293776}
+  mc: {fileID: 0}
 --- !u!195 &8296172667855293776
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -296,7 +333,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 6f4fc13f02353da4c8270b6d2efa1ad6,
         type: 3}
       propertyPath: m_Name
-      value: MaleChara1.6 (1)
+      value: Model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4fc13f02353da4c8270b6d2efa1ad6, type: 3}

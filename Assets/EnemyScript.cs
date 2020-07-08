@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyScript : MonoBehaviour, IUnit
 {
     // Start is called before the first frame update
     public UnitStats stats;
@@ -17,44 +17,47 @@ public class EnemyScript : MonoBehaviour
     private void Start()
     {
         mc = MainControl.Instance;
-        stats.obj = gameObject;
-
     }
     public void FindTiles()
     {
         tilesInRange.Clear();
         foreach (TileScript tile in FindObjectsOfType<TileScript>())
         {
-            if (tile.CheckRange(moveRange, agent, transform) && !tile.taken)
+            if (tile.CheckRange(moveRange, agent, transform) && !tile.Taken)
             {
-
                 tilesInRange.Add(tile);
             }
         }
+    }
+    public bool control()
+    {
+        return false;
     }
     public void StartTurn()
     {
         StopCoroutine("MoveRotation");
         StartCoroutine("MoveRotation");
     }
-    public IEnumerator MoveRotation()
+    public void MoveUnit(TileScript tile)
     {
-        yield return new WaitForSeconds(1f);
         agent.ResetPath();
-        FindTiles();
         if (currentTile)
         {
-            currentTile.taken = false;
-            if (currentTile.inRange)
+            currentTile.Taken = false;
+            if (currentTile.InRange)
                 currentTile.ChangeState(1);
             else
                 currentTile.ChangeState(0);
         }
-        currentTile = tilesInRange[Random.Range(0, tilesInRange.Count)];
-        currentTile.taken = true;
-        currentTile.ChangeColor(3);
-        Transform movePoint = currentTile.transform;
-        agent.SetDestination(movePoint.position);
+        agent.SetDestination(tile.transform.position);
+        tile.Taken = true;
+        tile.ChangeColor(3);
+    }
+    public IEnumerator MoveRotation()
+    {
+        yield return new WaitForSeconds(1f);
+        FindTiles();
+        MoveUnit(tilesInRange[Random.Range(0, tilesInRange.Count)]);
         yield return new WaitForSeconds(0.5f);
         while (agent.remainingDistance != 0)
             yield return null;

@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerControl : MonoBehaviour, IUnit
 {
-    public delegate void PlayerEvents();
-    public PlayerEvents CheckTiles;
     public NavMeshAgent agent;
     public float range;
     //public CapsuleCollider rangeColl;
     public bool moving;
     private LineRenderer line;
-    public TileScript currentTile;
+    private TileScript currentTile = null;
     public WeaponClass weapon;
     public UnitStats stats;
-    public bool playerTurn;
-    public MainControl mc;
-    public CameraControl cam;
-    public GameObject bulletPf;
-    public Transform bulletPoint;
+    //private bool playerTurn;
+    private MainControl mc;
+    private CameraControl cam;
+    [SerializeField] private GameObject bulletPf = null;
+    [SerializeField] private Transform bulletPoint = null;
     public bool canShoot;
     public class MoveSet
     {
@@ -28,6 +26,7 @@ public class PlayerControl : MonoBehaviour
     }
     public MoveSet moves = new MoveSet();
 
+
     void Start()
     {
         moves.move = true;
@@ -35,9 +34,6 @@ public class PlayerControl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         line = GetComponent<LineRenderer>();
         //rangeColl.radius = range;
-        TileCheck();
-        stats.pcontrol = true;
-        stats.obj = gameObject;
         mc = MainControl.Instance;
         cam = mc.camControl;
         //StartCoroutine(MoveCheck());
@@ -49,12 +45,30 @@ public class PlayerControl : MonoBehaviour
             Fire();
         }
     }
+    public bool control()
+    {
+        //playerTurn = true;
+        return true;
+    }
+    public void StartTurn()
+    {
+        //playerTurn = true;
+        mc.ChangePlayer(this);
+        mc.playerTurn = true;
+        mc.TileCheck();
+    }
+    public void MoveUnit(TileScript tile)
+    {
+        if (currentTile)
+            currentTile.Taken = false;
+        MovePlayer(tile.transform.position);
+        tile.Taken = true;
+    }
     public void MovePlayer(Vector3 pos)
     {
         if (!moving && agent.enabled == true && moves.move == true)
         {
             moving = true;
-            TileCheck();
             ResetPath();
             agent.SetDestination(pos);
             StartCoroutine(MoveCheck());
@@ -67,7 +81,7 @@ public class PlayerControl : MonoBehaviour
             yield return null;
         moving = false;
         mc.TileCheck();
-        mc.ui.turn.interactable = true;
+        UserInterface.Instance.turn.interactable = true;
         moves.move = false;
         //EndTurn();
     }
@@ -94,7 +108,6 @@ public class PlayerControl : MonoBehaviour
     {
         if (!moving)
         {
-            mc.playerTurn = false;
             mc.NextTurn();
             ResetMoves();
         }
@@ -103,11 +116,7 @@ public class PlayerControl : MonoBehaviour
     {
         moves.move = true;
         moves.action = true;
-        canShoot = true;
-    }
-    public void TileCheck()
-    {
-        if (CheckTiles != null) CheckTiles.Invoke();
+        canShoot = false;
     }
     public void PathLine(NavMeshPath path)
     {
@@ -168,7 +177,6 @@ public class PlayerControl : MonoBehaviour
         {
             //Debug.Log(2);
             return 4;
-
         }
         else if (distance >= ranges[1])
         {

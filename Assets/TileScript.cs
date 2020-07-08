@@ -12,17 +12,19 @@ public class TileScript : MonoBehaviour
     private Color dangerColor;
     private Color coverColor;
     */
-    public List<Color> ucolors = new List<Color>();
-    public Material mat;
-    public bool inRange;
+    private List<Color> ucolors = new List<Color>();
+    private Material mat;
+
     private int state;
-    public PlayerControl currentPc;
+    private PlayerControl currentPc;
     private MainControl mc;
     private NavMeshPath path;
-    public GameObject centerPoint;
-    public GameObject iconObj;
-    public int tileType;
-    public bool taken;
+    [SerializeField] private GameObject centerPoint = null;
+    [SerializeField] private GameObject iconObj = null;
+    [SerializeField] private int tileType;
+    public bool InRange { get; private set; }
+    public bool Taken { get; set; }
+    private Transform rotator;
     private void Awake()
     {
         mat = GetComponent<Renderer>().material;
@@ -45,23 +47,19 @@ public class TileScript : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (inRange && !taken)
+        if (InRange && !Taken)
         {
-            if (currentPc.currentTile)
-                currentPc.currentTile.taken = false;
-            currentPc.MovePlayer(transform.position);
-            currentPc.currentTile = this;
-            taken = true;
+            mc.currentUnit.GetComponent<IUnit>().MoveUnit(this);
         }
     }
     private void OnMouseEnter()
     {
-        if (inRange)
+        if (InRange)
             ChangeState(2);
     }
     private void OnMouseExit()
     {
-        if (inRange)
+        if (InRange)
             ChangeState(1);
         else
             ChangeState(0);
@@ -70,14 +68,15 @@ public class TileScript : MonoBehaviour
     {
         if (other.tag == "Obstacle")
         {
+            //Debug.Log("obs");
             ChangeState(-1);
         }
-        if (other.tag == "Cover")
+        else if (other.tag == "Cover")
         {
             tileType = 1;
             iconObj.SetActive(true);
         }
-        if (other.tag == "Movement")
+        else if (other.tag == "Movement")
         {
             //CheckState();
         }
@@ -93,7 +92,7 @@ public class TileScript : MonoBehaviour
     {
         currentPc = mc.currentPc;
         //Debug.Log("state checked");
-        inRange = CheckPcRange(currentPc);
+        InRange = CheckPcRange(currentPc);
         if (state != -1)
         {
             if (currentPc.moving)
@@ -103,7 +102,7 @@ public class TileScript : MonoBehaviour
             else
             {
 
-                if (inRange && !taken && mc.playerTurn)
+                if (InRange && !Taken && mc.playerTurn)
                     ChangeState(1);
                 else
                     ChangeState(0);
@@ -112,37 +111,34 @@ public class TileScript : MonoBehaviour
     }
     public void ChangeState(int s)
     {
-        if (currentPc)
-        {
-            state = s;
-            if (state == -1)
-            {
-                gameObject.SetActive(false);
-                currentPc.CheckTiles -= CheckState;
-                centerPoint.SetActive(false);
-            }
-            else if (state == 0)
-            {
-                ChangeColor(0);
-                inRange = false;
-                centerPoint.SetActive(false);
-            }
-            else if (state == 1)
-            {
-                ChangeColor(1);
-                inRange = true;
-                centerPoint.SetActive(false);
-                if (tileType == 1)
-                    ChangeColor(4);
 
-            }
-            else if (state == 2)
-            {
-                ChangeColor(2);
-                centerPoint.SetActive(true);
-                if (path.corners.Length > 0)
-                    currentPc.PathLine(path);
-            }
+        state = s;
+        if (state == -1)
+        {
+            gameObject.SetActive(false);
+            centerPoint.SetActive(false);
+        }
+        else if (state == 0)
+        {
+            ChangeColor(0);
+            InRange = false;
+            centerPoint.SetActive(false);
+        }
+        else if (state == 1)
+        {
+            ChangeColor(1);
+            InRange = true;
+            centerPoint.SetActive(false);
+            if (tileType == 1)
+                ChangeColor(4);
+
+        }
+        else if (state == 2)
+        {
+            ChangeColor(2);
+            centerPoint.SetActive(true);
+            if (path.corners.Length > 0)
+                currentPc.PathLine(path);
         }
     }
     public void ChangeColor(int i)

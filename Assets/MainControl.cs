@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class MainControl : MonoBehaviour
 {
@@ -21,11 +22,12 @@ public class MainControl : MonoBehaviour
     public delegate void MainEvents();
     public MainEvents CheckTiles;
 
-    public UserInterface ui;
+    private UserInterface ui;
     public CameraControl camControl;
-    public List<UnitStats> units = new List<UnitStats>();
-    public int turnOrder = 0;
+    public List<GameObject> units = new List<GameObject>();
+    private int turnOrder = 0;
     public PlayerControl currentPc;
+    public GameObject currentUnit;
     public bool playerTurn;
     private List<TileScript> tiles = new List<TileScript>();
 
@@ -40,11 +42,11 @@ public class MainControl : MonoBehaviour
         }
         foreach (EnemyScript unit in FindObjectsOfType<EnemyScript>())
         {
-            units.Add(unit.stats);
+            units.Add(unit.transform.gameObject);
         }
         foreach (PlayerControl unit in FindObjectsOfType<PlayerControl>())
         {
-            units.Add(unit.stats);
+            units.Add(unit.transform.gameObject);
             currentPc = unit;
             camControl.pc = unit;
         }
@@ -67,27 +69,19 @@ public class MainControl : MonoBehaviour
     public void NextTurn()
     {
         ui.turn.interactable = false;
-        UnitStats cu = units[turnOrder];
-        if (units[turnOrder].pcontrol)
-        {
-            playerTurn = true;
-            PlayerControl control = cu.obj.GetComponent<PlayerControl>();
-            currentPc = control;
-            camControl.follow = control.gameObject.transform;
-            camControl.pc = control;
-            control.playerTurn = true;
-            TileCheck();
-        }
-        else
-        {
-            EnemyScript control = cu.obj.GetComponent<EnemyScript>();
-            camControl.follow = control.gameObject.transform;
-            control.StartTurn();
-        }
+        GameObject cu = units[turnOrder];
+        currentUnit = cu;
+        units[turnOrder].GetComponent<IUnit>().StartTurn();
+        camControl.follow = cu.transform;
         if (turnOrder + 1 >= units.Count)
             turnOrder = 0;
         else
             turnOrder++;
+    }
+    public void ChangePlayer(PlayerControl pc)
+    {
+        currentPc = pc;
+        camControl.pc = pc;
     }
     public void EndPlayerTurn()
     {
