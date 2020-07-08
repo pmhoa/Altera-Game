@@ -8,6 +8,7 @@ TagManager:
   - Movement
   - Cover
   - Enemy
+  - Rotator
   layers:
   - Default
   - TransparentFX
