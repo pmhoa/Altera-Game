@@ -15,11 +15,12 @@ public class PlayerControl : MonoBehaviour
     public TileScript currentTile;
     public WeaponClass weapon;
     public UnitStats stats;
+
     public bool playerTurn;
     public MainControl mc;
     public class MoveSet
     {
-        
+
     }
 
     void Start()
@@ -28,8 +29,8 @@ public class PlayerControl : MonoBehaviour
         line = GetComponent<LineRenderer>();
         //rangeColl.radius = range;
         TileCheck();
-        stats.pcontrol = true;
-        stats.obj = gameObject;
+      //  stats.pcontrol = true;
+      //  stats.obj = gameObject;
         mc = MainControl.Instance;
         //StartCoroutine(MoveCheck());
     }

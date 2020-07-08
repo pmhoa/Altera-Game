@@ -17,7 +17,7 @@ public class EnemyScript : MonoBehaviour
     private void Start()
     {
         mc = MainControl.Instance;
-        stats.obj = gameObject;
+      //  stats.obj = gameObject;
 
     }
     public void FindTiles()

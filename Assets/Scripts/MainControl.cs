@@ -65,10 +65,10 @@ public class MainControl : MonoBehaviour
         if (CheckTiles != null) CheckTiles.Invoke();
     }
     public void NextTurn()
-    {
+    { /*
         ui.turn.interactable = false;
         UnitStats cu = units[turnOrder];
-        if (units[turnOrder].pcontrol)
+       if (units[turnOrder].pcontrol)
         {
             playerTurn = true;
             PlayerControl control = cu.obj.GetComponent<PlayerControl>();
@@ -88,6 +88,7 @@ public class MainControl : MonoBehaviour
             turnOrder = 0;
         else
             turnOrder++;
+            */
     }
     public void EndPlayerTurn()
     {

@@ -56,8 +56,8 @@ public class CameraControl : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Enemy")
                 {
                     TargetPart tp = hit.transform.GetComponent<TargetPart>();
-                    float hitchange = pc.HitChange(pc.stats.aim, pc.weapon.accuracy, pc.HitRange(pc.weapon, hit.transform), tp.parent.stats.dodge) * tp.hitMultiplier;
-                    ui.targetText.text = $"{tp.partName} {hitchange * 100:F1}%";
+                 //   float hitchange = pc.HitChange(pc.stats.aim, pc.weapon.accuracy, pc.HitRange(pc.weapon, hit.transform), tp.parent.stats.dodge) * tp.hitMultiplier;
+                  //  ui.targetText.text = $"{tp.partName} {hitchange * 100:F1}%";
                     ui.targetText.color = new Color32(240, 100, 100, 255);
                 }
                 else
