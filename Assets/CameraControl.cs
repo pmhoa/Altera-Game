@@ -11,6 +11,7 @@ public class CameraControl : MonoBehaviour
     private bool zoom;
     private bool personCam;
     private bool changing;
+    public bool camLock;
     public float xAxisClamp;
     private string mouseXInputName, mouseYInputName;
     public float mouseSensitivity;
@@ -35,7 +36,8 @@ public class CameraControl : MonoBehaviour
             transform.position = follow.transform.position + offset;
         else
         {
-            CameraRotation();
+            if (!camLock)
+                CameraRotation();
         }
         if (mc.playerTurn)
         {
@@ -76,14 +78,25 @@ public class CameraControl : MonoBehaviour
             {
                 StartCoroutine(ChangeCamRoutine(zoomedOut, 65f));
                 zoom = false;
+                pc.canShoot = false;
+
             }
             else
             {
                 StartCoroutine(ChangeCamRoutine(zoomedIn, 0));
                 zoom = true;
+                pc.canShoot = true;
+
             }
         }
 
+    }
+    public void LockCam()
+    {
+        if (camLock)
+            camLock = false;
+        else
+            camLock = true;
     }
     public IEnumerator ChangeCamRoutine(Vector3 newset, float rotation)
     {

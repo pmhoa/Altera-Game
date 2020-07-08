@@ -17,13 +17,21 @@ public class PlayerControl : MonoBehaviour
     public UnitStats stats;
     public bool playerTurn;
     public MainControl mc;
+    public CameraControl cam;
+    public GameObject bulletPf;
+    public Transform bulletPoint;
+    public bool canShoot;
     public class MoveSet
     {
-        
+        public bool move;
+        public bool action;
     }
+    public MoveSet moves = new MoveSet();
 
     void Start()
     {
+        moves.move = true;
+        moves.action = true;
         agent = GetComponent<NavMeshAgent>();
         line = GetComponent<LineRenderer>();
         //rangeColl.radius = range;
@@ -31,11 +39,19 @@ public class PlayerControl : MonoBehaviour
         stats.pcontrol = true;
         stats.obj = gameObject;
         mc = MainControl.Instance;
+        cam = mc.camControl;
         //StartCoroutine(MoveCheck());
+    }
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && canShoot)
+        {
+            Fire();
+        }
     }
     public void MovePlayer(Vector3 pos)
     {
-        if (!moving && agent.enabled == true)
+        if (!moving && agent.enabled == true && moves.move == true)
         {
             moving = true;
             TileCheck();
@@ -52,8 +68,27 @@ public class PlayerControl : MonoBehaviour
         moving = false;
         mc.TileCheck();
         mc.ui.turn.interactable = true;
-
+        moves.move = false;
         //EndTurn();
+    }
+    public void Fire()
+    {
+        if (moves.action == true)
+            StartCoroutine(FireMain());
+    }
+    public IEnumerator FireMain()
+    {
+        GameObject nbullet = Instantiate(bulletPf, bulletPoint);
+        Bullets nb = nbullet.GetComponent<Bullets>();
+        nb.speed = weapon.speed;
+        nb.Fire();
+        nbullet.transform.SetParent(null);
+        canShoot = false;
+        cam.LockCam();
+        moves.action = false;
+        yield return new WaitForSeconds(1.5f);
+        cam.ChangeCam();
+        cam.LockCam();
     }
     public void EndTurn()
     {
@@ -61,8 +96,14 @@ public class PlayerControl : MonoBehaviour
         {
             mc.playerTurn = false;
             mc.NextTurn();
+            ResetMoves();
         }
-
+    }
+    public void ResetMoves()
+    {
+        moves.move = true;
+        moves.action = true;
+        canShoot = true;
     }
     public void TileCheck()
     {
@@ -112,31 +153,31 @@ public class PlayerControl : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, target.position);
         float[] ranges = weapon.ranges;
-        Debug.Log($"{distance}");
+        //Debug.Log($"{distance}");
         if (distance >= ranges[4])
         {
-            Debug.Log(4);
+            //Debug.Log(4);
             return 16;
         }
         else if (distance >= ranges[3])
         {
-            Debug.Log(3);
+            //Debug.Log(3);
             return 8;
         }
         else if (distance >= ranges[2])
         {
-            Debug.Log(2);
+            //Debug.Log(2);
             return 4;
 
         }
         else if (distance >= ranges[1])
         {
-            Debug.Log(1);
+            //Debug.Log(1);
             return 1;
         }
         else
         {
-            Debug.Log(0);
+            //Debug.Log(0);
             return -2;
         }
     }
