@@ -173,6 +173,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1947446852}
   iconObj: {fileID: 1196497762}
   tileType: 0
+  taken: 0
 --- !u!65 &5378812
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -363,6 +364,7 @@ MonoBehaviour:
   centerPoint: {fileID: 145729849}
   iconObj: {fileID: 183912852}
   tileType: 0
+  taken: 0
 --- !u!65 &9310916
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -474,6 +476,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1404318953}
   iconObj: {fileID: 1603758651}
   tileType: 0
+  taken: 0
 --- !u!65 &9716786
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -585,6 +588,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1833425244}
   iconObj: {fileID: 436724689}
   tileType: 0
+  taken: 0
 --- !u!65 &12074100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1091,6 +1095,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2014356756}
   iconObj: {fileID: 260398379}
   tileType: 0
+  taken: 0
 --- !u!65 &25781906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1202,6 +1207,7 @@ MonoBehaviour:
   centerPoint: {fileID: 756978146}
   iconObj: {fileID: 1732313920}
   tileType: 0
+  taken: 0
 --- !u!65 &31205159
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1559,6 +1565,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1317401504}
   iconObj: {fileID: 1728357093}
   tileType: 0
+  taken: 0
 --- !u!65 &35650462
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1828,6 +1835,7 @@ MonoBehaviour:
   centerPoint: {fileID: 924021052}
   iconObj: {fileID: 478365050}
   tileType: 0
+  taken: 0
 --- !u!65 &42085322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2190,6 +2198,7 @@ MonoBehaviour:
   centerPoint: {fileID: 106125302}
   iconObj: {fileID: 1228155362}
   tileType: 0
+  taken: 0
 --- !u!65 &48469578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2617,6 +2626,7 @@ MonoBehaviour:
   centerPoint: {fileID: 900414699}
   iconObj: {fileID: 175365478}
   tileType: 0
+  taken: 0
 --- !u!65 &62160126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2965,6 +2975,7 @@ MonoBehaviour:
   centerPoint: {fileID: 490364198}
   iconObj: {fileID: 696218368}
   tileType: 0
+  taken: 0
 --- !u!65 &72009531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3155,6 +3166,7 @@ MonoBehaviour:
   centerPoint: {fileID: 633751622}
   iconObj: {fileID: 262037087}
   tileType: 0
+  taken: 0
 --- !u!65 &76316289
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3661,6 +3673,7 @@ MonoBehaviour:
   centerPoint: {fileID: 694926381}
   iconObj: {fileID: 324337187}
   tileType: 0
+  taken: 0
 --- !u!65 &95938867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3772,6 +3785,7 @@ MonoBehaviour:
   centerPoint: {fileID: 329464451}
   iconObj: {fileID: 1127635497}
   tileType: 0
+  taken: 0
 --- !u!65 &96622927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4247,6 +4261,7 @@ MonoBehaviour:
   centerPoint: {fileID: 575351250}
   iconObj: {fileID: 1269264587}
   tileType: 0
+  taken: 0
 --- !u!65 &105995454
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4753,6 +4768,7 @@ MonoBehaviour:
   centerPoint: {fileID: 867914494}
   iconObj: {fileID: 890270797}
   tileType: 0
+  taken: 0
 --- !u!65 &120717162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4864,6 +4880,7 @@ MonoBehaviour:
   centerPoint: {fileID: 613045817}
   iconObj: {fileID: 134782492}
   tileType: 0
+  taken: 0
 --- !u!65 &129952003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4975,6 +4992,7 @@ MonoBehaviour:
   centerPoint: {fileID: 655328086}
   iconObj: {fileID: 1495961924}
   tileType: 0
+  taken: 0
 --- !u!65 &130072155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5323,6 +5341,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1639372222}
   iconObj: {fileID: 1008892941}
   tileType: 0
+  taken: 0
 --- !u!65 &133902427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5671,6 +5690,7 @@ MonoBehaviour:
   centerPoint: {fileID: 896806487}
   iconObj: {fileID: 1672450426}
   tileType: 0
+  taken: 0
 --- !u!65 &142057958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6177,6 +6197,7 @@ MonoBehaviour:
   centerPoint: {fileID: 373934303}
   iconObj: {fileID: 1387730071}
   tileType: 0
+  taken: 0
 --- !u!65 &155514984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7078,6 +7099,7 @@ MonoBehaviour:
   centerPoint: {fileID: 176595933}
   iconObj: {fileID: 720785069}
   tileType: 0
+  taken: 0
 --- !u!65 &177578833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7663,6 +7685,7 @@ MonoBehaviour:
   centerPoint: {fileID: 275381860}
   iconObj: {fileID: 1651796876}
   tileType: 0
+  taken: 0
 --- !u!65 &203632544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7853,6 +7876,7 @@ MonoBehaviour:
   centerPoint: {fileID: 338047941}
   iconObj: {fileID: 1299428482}
   tileType: 0
+  taken: 0
 --- !u!65 &207494649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7964,6 +7988,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1872974357}
   iconObj: {fileID: 1748456202}
   tileType: 0
+  taken: 0
 --- !u!65 &208425705
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8154,6 +8179,7 @@ MonoBehaviour:
   centerPoint: {fileID: 604858956}
   iconObj: {fileID: 1928770609}
   tileType: 0
+  taken: 0
 --- !u!65 &215392951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8344,6 +8370,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1862125385}
   iconObj: {fileID: 609013252}
   tileType: 0
+  taken: 0
 --- !u!65 &221344430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8692,6 +8719,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1430176609}
   iconObj: {fileID: 1395125643}
   tileType: 0
+  taken: 0
 --- !u!65 &227931162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8882,6 +8910,7 @@ MonoBehaviour:
   centerPoint: {fileID: 892704445}
   iconObj: {fileID: 1155175082}
   tileType: 0
+  taken: 0
 --- !u!65 &233296671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8993,6 +9022,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1466020996}
   iconObj: {fileID: 1058793438}
   tileType: 0
+  taken: 0
 --- !u!65 &233314427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9183,6 +9213,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1742643363}
   iconObj: {fileID: 1382312391}
   tileType: 0
+  taken: 0
 --- !u!65 &235785035
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9373,6 +9404,7 @@ MonoBehaviour:
   centerPoint: {fileID: 726618343}
   iconObj: {fileID: 695636814}
   tileType: 0
+  taken: 0
 --- !u!65 &245413097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9484,6 +9516,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1531751152}
   iconObj: {fileID: 426849718}
   tileType: 0
+  taken: 0
 --- !u!65 &248070209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9595,6 +9628,7 @@ MonoBehaviour:
   centerPoint: {fileID: 364823885}
   iconObj: {fileID: 2098863565}
   tileType: 0
+  taken: 0
 --- !u!65 &248411276
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10338,6 +10372,7 @@ MonoBehaviour:
   centerPoint: {fileID: 743493748}
   iconObj: {fileID: 1573799180}
   tileType: 0
+  taken: 0
 --- !u!65 &262740742
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10449,6 +10484,7 @@ MonoBehaviour:
   centerPoint: {fileID: 847079394}
   iconObj: {fileID: 2060066107}
   tileType: 0
+  taken: 0
 --- !u!65 &264512612
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10560,6 +10596,7 @@ MonoBehaviour:
   centerPoint: {fileID: 309659187}
   iconObj: {fileID: 1014738556}
   tileType: 0
+  taken: 0
 --- !u!65 &268556501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11224,6 +11261,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1707893054}
   iconObj: {fileID: 1836876021}
   tileType: 0
+  taken: 0
 --- !u!65 &275482358
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11335,6 +11373,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1784869597}
   iconObj: {fileID: 539418292}
   tileType: 0
+  taken: 0
 --- !u!65 &281533097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11446,6 +11485,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1541533748}
   iconObj: {fileID: 85925337}
   tileType: 0
+  taken: 0
 --- !u!65 &282979182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11952,6 +11992,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1456450601}
   iconObj: {fileID: 954416582}
   tileType: 0
+  taken: 0
 --- !u!65 &294922991
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12142,6 +12183,7 @@ MonoBehaviour:
   centerPoint: {fileID: 271656854}
   iconObj: {fileID: 1669320053}
   tileType: 0
+  taken: 0
 --- !u!65 &299532180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12490,6 +12532,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1008734567}
   iconObj: {fileID: 1598185034}
   tileType: 0
+  taken: 0
 --- !u!65 &307145962
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12601,6 +12644,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2100680704}
   iconObj: {fileID: 1863929198}
   tileType: 0
+  taken: 0
 --- !u!65 &307948554
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12870,6 +12914,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1812779866}
   iconObj: {fileID: 1784790145}
   tileType: 0
+  taken: 0
 --- !u!65 &315566189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13455,6 +13500,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1745155668}
   iconObj: {fileID: 109049024}
   tileType: 0
+  taken: 0
 --- !u!65 &331251564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13645,6 +13691,7 @@ MonoBehaviour:
   centerPoint: {fileID: 823892745}
   iconObj: {fileID: 1355918381}
   tileType: 0
+  taken: 0
 --- !u!65 &332169208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13756,6 +13803,7 @@ MonoBehaviour:
   centerPoint: {fileID: 161323581}
   iconObj: {fileID: 256439648}
   tileType: 0
+  taken: 0
 --- !u!65 &332828374
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14023,6 +14071,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1099813640}
   iconObj: {fileID: 298836102}
   tileType: 0
+  taken: 0
 --- !u!65 &335422562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14213,6 +14262,7 @@ MonoBehaviour:
   centerPoint: {fileID: 587000303}
   iconObj: {fileID: 739471869}
   tileType: 0
+  taken: 0
 --- !u!65 &341193603
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14403,6 +14453,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1322152932}
   iconObj: {fileID: 1009634892}
   tileType: 0
+  taken: 0
 --- !u!65 &345328260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14514,6 +14565,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1607861018}
   iconObj: {fileID: 847014507}
   tileType: 0
+  taken: 0
 --- !u!65 &345845606
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14625,6 +14677,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1556356112}
   iconObj: {fileID: 938335313}
   tileType: 0
+  taken: 0
 --- !u!65 &345882115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14736,6 +14789,7 @@ MonoBehaviour:
   centerPoint: {fileID: 554190582}
   iconObj: {fileID: 884234395}
   tileType: 0
+  taken: 0
 --- !u!65 &354594582
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14926,6 +14980,7 @@ MonoBehaviour:
   centerPoint: {fileID: 274846618}
   iconObj: {fileID: 1370654264}
   tileType: 0
+  taken: 0
 --- !u!65 &356259119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15037,6 +15092,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1842398279}
   iconObj: {fileID: 1360079240}
   tileType: 0
+  taken: 0
 --- !u!65 &356769383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15148,6 +15204,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1861292433}
   iconObj: {fileID: 1060923819}
   tileType: 0
+  taken: 0
 --- !u!65 &358305270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15259,6 +15316,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1653830460}
   iconObj: {fileID: 1156118295}
   tileType: 0
+  taken: 0
 --- !u!65 &358490373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15528,6 +15586,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1877738902}
   iconObj: {fileID: 1203420570}
   tileType: 0
+  taken: 0
 --- !u!65 &363918415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15876,6 +15935,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1503888804}
   iconObj: {fileID: 1006239457}
   tileType: 0
+  taken: 0
 --- !u!65 &374227596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16145,6 +16205,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1691996587}
   iconObj: {fileID: 1171664375}
   tileType: 0
+  taken: 0
 --- !u!65 &386505370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16493,6 +16554,7 @@ MonoBehaviour:
   centerPoint: {fileID: 708389195}
   iconObj: {fileID: 1518481127}
   tileType: 0
+  taken: 0
 --- !u!65 &401006445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16604,6 +16666,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2091205629}
   iconObj: {fileID: 1973248060}
   tileType: 0
+  taken: 0
 --- !u!65 &403135404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16715,6 +16778,7 @@ MonoBehaviour:
   centerPoint: {fileID: 321279158}
   iconObj: {fileID: 933019235}
   tileType: 0
+  taken: 0
 --- !u!65 &403496464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16826,6 +16890,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1573487294}
   iconObj: {fileID: 2024546806}
   tileType: 0
+  taken: 0
 --- !u!65 &407474018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17016,6 +17081,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1810226893}
   iconObj: {fileID: 2144709652}
   tileType: 0
+  taken: 0
 --- !u!65 &409916440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17285,6 +17351,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1956620753}
   iconObj: {fileID: 588537575}
   tileType: 0
+  taken: 0
 --- !u!65 &414672940
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17409,7 +17476,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &415616571
 GameObject:
@@ -17462,6 +17529,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2088348783}
   iconObj: {fileID: 529906808}
   tileType: 0
+  taken: 0
 --- !u!65 &415616574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17652,6 +17720,7 @@ MonoBehaviour:
   centerPoint: {fileID: 39230469}
   iconObj: {fileID: 1480909430}
   tileType: 0
+  taken: 0
 --- !u!65 &419640857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17763,6 +17832,7 @@ MonoBehaviour:
   centerPoint: {fileID: 669638737}
   iconObj: {fileID: 2048054449}
   tileType: 0
+  taken: 0
 --- !u!65 &420244052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18190,6 +18260,7 @@ MonoBehaviour:
   centerPoint: {fileID: 374399600}
   iconObj: {fileID: 1955409833}
   tileType: 0
+  taken: 0
 --- !u!65 &434643232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18301,6 +18372,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2038356996}
   iconObj: {fileID: 1064533604}
   tileType: 0
+  taken: 0
 --- !u!65 &435937990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18491,6 +18563,7 @@ MonoBehaviour:
   centerPoint: {fileID: 386503845}
   iconObj: {fileID: 657036963}
   tileType: 0
+  taken: 0
 --- !u!65 &437597692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18760,6 +18833,7 @@ MonoBehaviour:
   centerPoint: {fileID: 727258557}
   iconObj: {fileID: 1224652590}
   tileType: 0
+  taken: 0
 --- !u!65 &445387901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19029,6 +19103,7 @@ MonoBehaviour:
   centerPoint: {fileID: 270490552}
   iconObj: {fileID: 680990137}
   tileType: 0
+  taken: 0
 --- !u!65 &457004289
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19140,6 +19215,7 @@ MonoBehaviour:
   centerPoint: {fileID: 870959368}
   iconObj: {fileID: 980674564}
   tileType: 0
+  taken: 0
 --- !u!65 &461719946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19251,6 +19327,7 @@ MonoBehaviour:
   centerPoint: {fileID: 960062140}
   iconObj: {fileID: 1218193675}
   tileType: 0
+  taken: 0
 --- !u!65 &470021234
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19362,6 +19439,7 @@ MonoBehaviour:
   centerPoint: {fileID: 809943101}
   iconObj: {fileID: 1098526777}
   tileType: 0
+  taken: 0
 --- !u!65 &471703269
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19473,6 +19551,7 @@ MonoBehaviour:
   centerPoint: {fileID: 583889393}
   iconObj: {fileID: 485721895}
   tileType: 0
+  taken: 0
 --- !u!65 &471739541
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19900,6 +19979,7 @@ MonoBehaviour:
   centerPoint: {fileID: 495887364}
   iconObj: {fileID: 158105550}
   tileType: 0
+  taken: 0
 --- !u!65 &482690289
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20011,6 +20091,7 @@ MonoBehaviour:
   centerPoint: {fileID: 864203309}
   iconObj: {fileID: 1384205371}
   tileType: 0
+  taken: 0
 --- !u!65 &484565177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20201,6 +20282,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1658221004}
   iconObj: {fileID: 82096981}
   tileType: 0
+  taken: 0
 --- !u!65 &485784028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20470,6 +20552,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1443886257}
   iconObj: {fileID: 1631571808}
   tileType: 0
+  taken: 0
 --- !u!65 &490781091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20581,6 +20664,7 @@ MonoBehaviour:
   centerPoint: {fileID: 892583905}
   iconObj: {fileID: 1365909477}
   tileType: 0
+  taken: 0
 --- !u!65 &491963097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20771,6 +20855,7 @@ MonoBehaviour:
   centerPoint: {fileID: 510099250}
   iconObj: {fileID: 1656357622}
   tileType: 0
+  taken: 0
 --- !u!65 &495376158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20961,6 +21046,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1141755559}
   iconObj: {fileID: 1791172097}
   tileType: 0
+  taken: 0
 --- !u!65 &499413439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21309,6 +21395,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1680609045}
   iconObj: {fileID: 1855799416}
   tileType: 0
+  taken: 0
 --- !u!65 &503748259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21420,6 +21507,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1763759797}
   iconObj: {fileID: 1078558101}
   tileType: 0
+  taken: 0
 --- !u!65 &504547923
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22637,6 +22725,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1996318955}
   iconObj: {fileID: 1559688943}
   tileType: 0
+  taken: 0
 --- !u!65 &529844840
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23240,6 +23329,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1197759712}
   iconObj: {fileID: 1712634677}
   tileType: 0
+  taken: 0
 --- !u!65 &541452929
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23968,6 +24058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crossHair: {fileID: 1060766301}
+  crossHairImg: {fileID: 1060766303}
   targetText: {fileID: 333182787}
   turn: {fileID: 890012654}
 --- !u!1 &568535191
@@ -24179,6 +24270,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1499690563}
   iconObj: {fileID: 1693375953}
   tileType: 0
+  taken: 0
 --- !u!65 &569443299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25080,6 +25172,7 @@ MonoBehaviour:
   centerPoint: {fileID: 593557071}
   iconObj: {fileID: 1184808500}
   tileType: 0
+  taken: 0
 --- !u!65 &591939149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25507,6 +25600,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1044339278}
   iconObj: {fileID: 1316406795}
   tileType: 0
+  taken: 0
 --- !u!65 &601544966
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25776,6 +25870,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1052485204}
   iconObj: {fileID: 1721078421}
   tileType: 0
+  taken: 0
 --- !u!65 &604668023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26203,6 +26298,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1650270021}
   iconObj: {fileID: 659246496}
   tileType: 0
+  taken: 0
 --- !u!65 &615059653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26393,6 +26489,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1420911356}
   iconObj: {fileID: 1874863047}
   tileType: 0
+  taken: 0
 --- !u!65 &620534246
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26741,6 +26838,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1938717177}
   iconObj: {fileID: 525024545}
   tileType: 0
+  taken: 0
 --- !u!65 &632403152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26852,6 +26950,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1910016209}
   iconObj: {fileID: 521336253}
   tileType: 0
+  taken: 0
 --- !u!65 &633550185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27437,6 +27536,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1866210501}
   iconObj: {fileID: 408841363}
   tileType: 0
+  taken: 0
 --- !u!65 &656364542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27548,6 +27648,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1502330612}
   iconObj: {fileID: 505650302}
   tileType: 0
+  taken: 0
 --- !u!65 &656443781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28449,6 +28550,7 @@ MonoBehaviour:
   centerPoint: {fileID: 675947665}
   iconObj: {fileID: 1821104149}
   tileType: 0
+  taken: 0
 --- !u!65 &673632529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28876,6 +28978,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1401629985}
   iconObj: {fileID: 787998728}
   tileType: 0
+  taken: 0
 --- !u!65 &687194810
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29066,6 +29169,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1275969107}
   iconObj: {fileID: 715655618}
   tileType: 0
+  taken: 0
 --- !u!65 &693093626
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30000,6 +30104,7 @@ MonoBehaviour:
   centerPoint: {fileID: 536290179}
   iconObj: {fileID: 902518865}
   tileType: 0
+  taken: 0
 --- !u!65 &714510288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30901,6 +31006,7 @@ MonoBehaviour:
   centerPoint: {fileID: 197114162}
   iconObj: {fileID: 1857349601}
   tileType: 0
+  taken: 0
 --- !u!65 &727514580
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31091,6 +31197,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1618845964}
   iconObj: {fileID: 2015989516}
   tileType: 0
+  taken: 0
 --- !u!65 &733711151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31202,6 +31309,7 @@ MonoBehaviour:
   centerPoint: {fileID: 290029973}
   iconObj: {fileID: 626778771}
   tileType: 0
+  taken: 0
 --- !u!65 &735566084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32182,6 +32290,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1994224811}
   iconObj: {fileID: 1560976571}
   tileType: 0
+  taken: 0
 --- !u!65 &751829905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32372,6 +32481,7 @@ MonoBehaviour:
   centerPoint: {fileID: 745345263}
   iconObj: {fileID: 1770170819}
   tileType: 0
+  taken: 0
 --- !u!65 &753382083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32562,6 +32672,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1301217720}
   iconObj: {fileID: 1783308314}
   tileType: 0
+  taken: 0
 --- !u!65 &754243600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32673,6 +32784,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1704771045}
   iconObj: {fileID: 413919630}
   tileType: 0
+  taken: 0
 --- !u!65 &755522245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32784,6 +32896,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1585745504}
   iconObj: {fileID: 2014304855}
   tileType: 0
+  taken: 0
 --- !u!65 &756735569
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33053,6 +33166,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1571087248}
   iconObj: {fileID: 1520741836}
   tileType: 0
+  taken: 0
 --- !u!65 &771817875
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33478,6 +33592,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1426801546}
   iconObj: {fileID: 1882165923}
   tileType: 0
+  taken: 0
 --- !u!65 &785583267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33905,6 +34020,7 @@ MonoBehaviour:
   centerPoint: {fileID: 972073424}
   iconObj: {fileID: 1363975336}
   tileType: 0
+  taken: 0
 --- !u!65 &800197865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34016,6 +34132,7 @@ MonoBehaviour:
   centerPoint: {fileID: 253256200}
   iconObj: {fileID: 1190069049}
   tileType: 0
+  taken: 0
 --- !u!65 &800315643
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34285,6 +34402,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1418501504}
   iconObj: {fileID: 306771742}
   tileType: 0
+  taken: 0
 --- !u!65 &801378884
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34396,6 +34514,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1155782265}
   iconObj: {fileID: 507102320}
   tileType: 0
+  taken: 0
 --- !u!65 &805822549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34507,6 +34626,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2125692383}
   iconObj: {fileID: 2047846834}
   tileType: 0
+  taken: 0
 --- !u!65 &806925730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34618,6 +34738,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1431112816}
   iconObj: {fileID: 1315531086}
   tileType: 0
+  taken: 0
 --- !u!65 &807495245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34966,6 +35087,7 @@ MonoBehaviour:
   centerPoint: {fileID: 740385561}
   iconObj: {fileID: 967531195}
   tileType: 0
+  taken: 0
 --- !u!65 &818473998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35077,6 +35199,7 @@ MonoBehaviour:
   centerPoint: {fileID: 193498289}
   iconObj: {fileID: 1568403245}
   tileType: 0
+  taken: 0
 --- !u!65 &821850669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35267,6 +35390,7 @@ MonoBehaviour:
   centerPoint: {fileID: 20497763}
   iconObj: {fileID: 2127324286}
   tileType: 0
+  taken: 0
 --- !u!65 &831036768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35536,6 +35660,7 @@ MonoBehaviour:
   centerPoint: {fileID: 768233278}
   iconObj: {fileID: 1517873974}
   tileType: 0
+  taken: 0
 --- !u!65 &835417947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35647,6 +35772,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1042883022}
   iconObj: {fileID: 1223128635}
   tileType: 0
+  taken: 0
 --- !u!65 &838318937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36469,6 +36595,7 @@ MonoBehaviour:
   centerPoint: {fileID: 646704841}
   iconObj: {fileID: 800496995}
   tileType: 0
+  taken: 0
 --- !u!65 &858850291
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36659,6 +36786,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1525531346}
   iconObj: {fileID: 43764525}
   tileType: 0
+  taken: 0
 --- !u!65 &859725437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37086,6 +37214,7 @@ MonoBehaviour:
   centerPoint: {fileID: 16797838}
   iconObj: {fileID: 982909644}
   tileType: 0
+  taken: 0
 --- !u!65 &864696831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37197,6 +37326,7 @@ MonoBehaviour:
   centerPoint: {fileID: 306456848}
   iconObj: {fileID: 794586395}
   tileType: 0
+  taken: 0
 --- !u!65 &866540318
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37466,6 +37596,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1332485891}
   iconObj: {fileID: 1213986753}
   tileType: 0
+  taken: 0
 --- !u!65 &868328746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37814,6 +37945,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1173150705}
   iconObj: {fileID: 667713820}
   tileType: 0
+  taken: 0
 --- !u!65 &882089406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38083,6 +38215,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2002808753}
   iconObj: {fileID: 906217622}
   tileType: 0
+  taken: 0
 --- !u!65 &888073372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39271,6 +39404,7 @@ MonoBehaviour:
   centerPoint: {fileID: 569243875}
   iconObj: {fileID: 304028221}
   tileType: 0
+  taken: 0
 --- !u!65 &901653341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39619,6 +39753,7 @@ MonoBehaviour:
   centerPoint: {fileID: 524457840}
   iconObj: {fileID: 511677088}
   tileType: 0
+  taken: 0
 --- !u!65 &910809696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39888,6 +40023,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1522592066}
   iconObj: {fileID: 894078342}
   tileType: 0
+  taken: 0
 --- !u!65 &912587253
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40078,6 +40214,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2037917142}
   iconObj: {fileID: 1154493786}
   tileType: 0
+  taken: 0
 --- !u!65 &918576870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40189,6 +40326,7 @@ MonoBehaviour:
   centerPoint: {fileID: 715531273}
   iconObj: {fileID: 157096028}
   tileType: 0
+  taken: 0
 --- !u!65 &921034378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40300,6 +40438,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1240480527}
   iconObj: {fileID: 1065806494}
   tileType: 0
+  taken: 0
 --- !u!65 &921172810
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40490,6 +40629,7 @@ MonoBehaviour:
   centerPoint: {fileID: 391831291}
   iconObj: {fileID: 1029164162}
   tileType: 0
+  taken: 0
 --- !u!65 &927926330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40838,6 +40978,7 @@ MonoBehaviour:
   centerPoint: {fileID: 22420790}
   iconObj: {fileID: 1080193108}
   tileType: 0
+  taken: 0
 --- !u!65 &936342180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41295,6 +41436,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1042597785}
   iconObj: {fileID: 1057189662}
   tileType: 0
+  taken: 0
 --- !u!65 &948357108
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41406,6 +41548,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1580457219}
   iconObj: {fileID: 2026398207}
   tileType: 0
+  taken: 0
 --- !u!65 &948528254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42022,7 +42165,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -42046,6 +42189,7 @@ MonoBehaviour:
   rotatorObj: {fileID: 707303679}
   pc: {fileID: 0}
   mc: {fileID: 0}
+  hitChange: 0
 --- !u!1 &966526172
 GameObject:
   m_ObjectHideFlags: 0
@@ -42097,6 +42241,7 @@ MonoBehaviour:
   centerPoint: {fileID: 104506565}
   iconObj: {fileID: 329275876}
   tileType: 0
+  taken: 0
 --- !u!65 &966526175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42366,6 +42511,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2006339200}
   iconObj: {fileID: 1658114487}
   tileType: 0
+  taken: 0
 --- !u!65 &971804347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42635,6 +42781,7 @@ MonoBehaviour:
   centerPoint: {fileID: 955363706}
   iconObj: {fileID: 256350798}
   tileType: 0
+  taken: 0
 --- !u!65 &972386940
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42746,6 +42893,7 @@ MonoBehaviour:
   centerPoint: {fileID: 593508682}
   iconObj: {fileID: 1848967515}
   tileType: 0
+  taken: 0
 --- !u!65 &973449430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43173,6 +43321,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1690510385}
   iconObj: {fileID: 523300670}
   tileType: 0
+  taken: 0
 --- !u!65 &985115052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43284,6 +43433,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2006320326}
   iconObj: {fileID: 896753293}
   tileType: 0
+  taken: 0
 --- !u!65 &986080290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43474,6 +43624,7 @@ MonoBehaviour:
   centerPoint: {fileID: 166829765}
   iconObj: {fileID: 736558650}
   tileType: 0
+  taken: 0
 --- !u!65 &990346673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43743,6 +43894,7 @@ MonoBehaviour:
   centerPoint: {fileID: 776190975}
   iconObj: {fileID: 595641952}
   tileType: 0
+  taken: 0
 --- !u!65 &997859050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43854,6 +44006,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1989358163}
   iconObj: {fileID: 1984102391}
   tileType: 0
+  taken: 0
 --- !u!65 &998940789
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43914,6 +44067,79 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998940786}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &999950934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 999950935}
+  - component: {fileID: 999950937}
+  - component: {fileID: 999950936}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &999950935
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999950934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1060766302}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &999950936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999950934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &999950937
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999950934}
+  m_CullTransparentMesh: 0
 --- !u!1 &1006239457
 GameObject:
   m_ObjectHideFlags: 0
@@ -44439,6 +44665,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1894410991}
   iconObj: {fileID: 1541993851}
   tileType: 0
+  taken: 0
 --- !u!65 &1022137560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44629,6 +44856,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1930764518}
   iconObj: {fileID: 2073501098}
   tileType: 0
+  taken: 0
 --- !u!65 &1023489974
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44740,6 +44968,7 @@ MonoBehaviour:
   centerPoint: {fileID: 214984786}
   iconObj: {fileID: 1845860972}
   tileType: 0
+  taken: 0
 --- !u!65 &1023880615
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45088,6 +45317,7 @@ MonoBehaviour:
   centerPoint: {fileID: 571778289}
   iconObj: {fileID: 1546228321}
   tileType: 0
+  taken: 0
 --- !u!65 &1031851534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45199,6 +45429,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1804629612}
   iconObj: {fileID: 1954102761}
   tileType: 0
+  taken: 0
 --- !u!65 &1038419144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45626,6 +45857,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1052862860}
   iconObj: {fileID: 1340595350}
   tileType: 0
+  taken: 0
 --- !u!65 &1044740607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45737,6 +45969,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1353264983}
   iconObj: {fileID: 668891263}
   tileType: 0
+  taken: 0
 --- !u!65 &1045306665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46006,6 +46239,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1445627405}
   iconObj: {fileID: 494722448}
   tileType: 0
+  taken: 0
 --- !u!65 &1051046868
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46384,6 +46618,7 @@ MonoBehaviour:
   centerPoint: {fileID: 667213417}
   iconObj: {fileID: 575540577}
   tileType: 0
+  taken: 0
 --- !u!65 &1054415737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46946,14 +47181,15 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 999950935}
   m_Father: {fileID: 566829258}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 4, y: 4}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1060766303
 MonoBehaviour:
@@ -46973,7 +47209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 87fbee7a6dded734ea6b6a4fd5cdca39, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -47358,6 +47594,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1265280627}
   iconObj: {fileID: 2026200492}
   tileType: 0
+  taken: 0
 --- !u!65 &1066358924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47469,6 +47706,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1487684660}
   iconObj: {fileID: 720242083}
   tileType: 0
+  taken: 0
 --- !u!65 &1074398431
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47738,6 +47976,7 @@ MonoBehaviour:
   centerPoint: {fileID: 115299709}
   iconObj: {fileID: 269513523}
   tileType: 0
+  taken: 0
 --- !u!65 &1079733136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48086,6 +48325,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1797263080}
   iconObj: {fileID: 332107014}
   tileType: 0
+  taken: 0
 --- !u!65 &1086112446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48197,6 +48437,7 @@ MonoBehaviour:
   centerPoint: {fileID: 440164652}
   iconObj: {fileID: 752445832}
   tileType: 0
+  taken: 0
 --- !u!65 &1086320610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48308,6 +48549,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1991228252}
   iconObj: {fileID: 896028465}
   tileType: 0
+  taken: 0
 --- !u!65 &1093750729
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48419,6 +48661,7 @@ MonoBehaviour:
   centerPoint: {fileID: 579132697}
   iconObj: {fileID: 1900040709}
   tileType: 0
+  taken: 0
 --- !u!65 &1094385467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48767,6 +49010,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1565431751}
   iconObj: {fileID: 2096243556}
   tileType: 0
+  taken: 0
 --- !u!65 &1101281192
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48878,6 +49122,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1178276640}
   iconObj: {fileID: 1424746962}
   tileType: 0
+  taken: 0
 --- !u!65 &1107202896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49073,6 +49318,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1578260972}
   iconObj: {fileID: 1291204509}
   tileType: 0
+  taken: 0
 --- !u!65 &1118270185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49342,6 +49588,7 @@ MonoBehaviour:
   centerPoint: {fileID: 981397724}
   iconObj: {fileID: 885348766}
   tileType: 0
+  taken: 0
 --- !u!65 &1124612194
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49453,6 +49700,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2006826518}
   iconObj: {fileID: 476971106}
   tileType: 0
+  taken: 0
 --- !u!65 &1124959189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49643,6 +49891,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1374261118}
   iconObj: {fileID: 1977401266}
   tileType: 0
+  taken: 0
 --- !u!65 &1130595390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49991,6 +50240,7 @@ MonoBehaviour:
   centerPoint: {fileID: 14929079}
   iconObj: {fileID: 1059056190}
   tileType: 0
+  taken: 0
 --- !u!65 &1138982789
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50102,6 +50352,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2075791922}
   iconObj: {fileID: 1124252226}
   tileType: 0
+  taken: 0
 --- !u!65 &1139467602
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50292,6 +50543,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1890724521}
   iconObj: {fileID: 1762265990}
   tileType: 0
+  taken: 0
 --- !u!65 &1141569913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50561,6 +50813,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1770433490}
   iconObj: {fileID: 163573063}
   tileType: 0
+  taken: 0
 --- !u!65 &1144293219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51146,6 +51399,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1995337934}
   iconObj: {fileID: 1713137900}
   tileType: 0
+  taken: 0
 --- !u!65 &1156759641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51652,6 +51906,7 @@ MonoBehaviour:
   centerPoint: {fileID: 847327970}
   iconObj: {fileID: 537354913}
   tileType: 0
+  taken: 0
 --- !u!65 &1174407131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52158,6 +52413,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1383465665}
   iconObj: {fileID: 31426914}
   tileType: 0
+  taken: 0
 --- !u!65 &1190766288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52269,6 +52525,7 @@ MonoBehaviour:
   centerPoint: {fileID: 41989104}
   iconObj: {fileID: 2073797469}
   tileType: 0
+  taken: 0
 --- !u!65 &1195147983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52696,6 +52953,7 @@ MonoBehaviour:
   centerPoint: {fileID: 631834312}
   iconObj: {fileID: 1026012273}
   tileType: 0
+  taken: 0
 --- !u!65 &1200358468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52965,6 +53223,7 @@ MonoBehaviour:
   centerPoint: {fileID: 716803231}
   iconObj: {fileID: 1433465940}
   tileType: 0
+  taken: 0
 --- !u!65 &1205395129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53234,6 +53493,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1359384622}
   iconObj: {fileID: 1211365249}
   tileType: 0
+  taken: 0
 --- !u!65 &1212162842
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53345,6 +53605,7 @@ MonoBehaviour:
   centerPoint: {fileID: 731617510}
   iconObj: {fileID: 1778578489}
   tileType: 0
+  taken: 0
 --- !u!65 &1213932119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53614,6 +53875,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1983494241}
   iconObj: {fileID: 222602935}
   tileType: 0
+  taken: 0
 --- !u!65 &1216397087
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53725,6 +53987,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1139886277}
   iconObj: {fileID: 1816680501}
   tileType: 0
+  taken: 0
 --- !u!65 &1217196914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54310,6 +54573,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1124312710}
   iconObj: {fileID: 1294766861}
   tileType: 0
+  taken: 0
 --- !u!65 &1225973576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54500,6 +54764,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1454723164}
   iconObj: {fileID: 1796983727}
   tileType: 0
+  taken: 0
 --- !u!65 &1238051523
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54611,6 +54876,7 @@ MonoBehaviour:
   centerPoint: {fileID: 663130816}
   iconObj: {fileID: 2119922396}
   tileType: 0
+  taken: 0
 --- !u!65 &1238653427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54722,6 +54988,7 @@ MonoBehaviour:
   centerPoint: {fileID: 679194104}
   iconObj: {fileID: 653583672}
   tileType: 0
+  taken: 0
 --- !u!65 &1239053186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55149,6 +55416,7 @@ MonoBehaviour:
   centerPoint: {fileID: 52570177}
   iconObj: {fileID: 745563212}
   tileType: 0
+  taken: 0
 --- !u!65 &1257291140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55497,6 +55765,7 @@ MonoBehaviour:
   centerPoint: {fileID: 500351876}
   iconObj: {fileID: 1265057018}
   tileType: 0
+  taken: 0
 --- !u!65 &1261622707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55766,6 +56035,7 @@ MonoBehaviour:
   centerPoint: {fileID: 838700251}
   iconObj: {fileID: 1885031059}
   tileType: 0
+  taken: 0
 --- !u!65 &1265814023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55877,6 +56147,7 @@ MonoBehaviour:
   centerPoint: {fileID: 242730695}
   iconObj: {fileID: 133348764}
   tileType: 0
+  taken: 0
 --- !u!65 &1267431828
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56067,6 +56338,7 @@ MonoBehaviour:
   centerPoint: {fileID: 626875670}
   iconObj: {fileID: 1396047752}
   tileType: 0
+  taken: 0
 --- !u!65 &1272761941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56415,6 +56687,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1150874494}
   iconObj: {fileID: 1599793024}
   tileType: 0
+  taken: 0
 --- !u!65 &1276372545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56526,6 +56799,7 @@ MonoBehaviour:
   centerPoint: {fileID: 389206683}
   iconObj: {fileID: 2122425932}
   tileType: 0
+  taken: 0
 --- !u!65 &1277762939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56874,6 +57148,7 @@ MonoBehaviour:
   centerPoint: {fileID: 782504320}
   iconObj: {fileID: 832657716}
   tileType: 0
+  taken: 0
 --- !u!65 &1290588509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57301,6 +57576,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1219841555}
   iconObj: {fileID: 1777420203}
   tileType: 0
+  taken: 0
 --- !u!65 &1294875891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57412,6 +57688,7 @@ MonoBehaviour:
   centerPoint: {fileID: 248969876}
   iconObj: {fileID: 849161643}
   tileType: 0
+  taken: 0
 --- !u!65 &1296847881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57760,6 +58037,7 @@ MonoBehaviour:
   centerPoint: {fileID: 891891691}
   iconObj: {fileID: 556415529}
   tileType: 0
+  taken: 0
 --- !u!65 &1302972533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57871,6 +58149,7 @@ MonoBehaviour:
   centerPoint: {fileID: 602293915}
   iconObj: {fileID: 937128737}
   tileType: 0
+  taken: 0
 --- !u!65 &1304217460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58219,6 +58498,7 @@ MonoBehaviour:
   centerPoint: {fileID: 201787751}
   iconObj: {fileID: 741045669}
   tileType: 0
+  taken: 0
 --- !u!65 &1310660652
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58409,6 +58689,7 @@ MonoBehaviour:
   centerPoint: {fileID: 633967695}
   iconObj: {fileID: 568535191}
   tileType: 0
+  taken: 0
 --- !u!65 &1315225789
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58836,6 +59117,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1309014671}
   iconObj: {fileID: 1059821956}
   tileType: 0
+  taken: 0
 --- !u!65 &1317936448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59105,6 +59387,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1085477351}
   iconObj: {fileID: 665478185}
   tileType: 0
+  taken: 0
 --- !u!65 &1327040377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59216,6 +59499,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1965834142}
   iconObj: {fileID: 900924214}
   tileType: 0
+  taken: 0
 --- !u!65 &1327061626
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59406,6 +59690,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1850960811}
   iconObj: {fileID: 1663761595}
   tileType: 0
+  taken: 0
 --- !u!65 &1330963958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59675,6 +59960,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1286534414}
   iconObj: {fileID: 411916343}
   tileType: 0
+  taken: 0
 --- !u!65 &1333527077
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59786,6 +60072,7 @@ MonoBehaviour:
   centerPoint: {fileID: 149221740}
   iconObj: {fileID: 1931976100}
   tileType: 0
+  taken: 0
 --- !u!65 &1336899352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60055,6 +60342,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1679461014}
   iconObj: {fileID: 1015761115}
   tileType: 0
+  taken: 0
 --- !u!65 &1343623133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60324,6 +60612,7 @@ MonoBehaviour:
   centerPoint: {fileID: 130686108}
   iconObj: {fileID: 175524096}
   tileType: 0
+  taken: 0
 --- !u!65 &1344533424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60435,6 +60724,7 @@ MonoBehaviour:
   centerPoint: {fileID: 842851898}
   iconObj: {fileID: 290730641}
   tileType: 0
+  taken: 0
 --- !u!65 &1349591249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60710,6 +61000,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1967241356}
   iconObj: {fileID: 1142518405}
   tileType: 0
+  taken: 0
 --- !u!65 &1354940933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60900,6 +61191,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2064827906}
   iconObj: {fileID: 517976725}
   tileType: 0
+  taken: 0
 --- !u!65 &1358983543
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61327,6 +61619,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1225861183}
   iconObj: {fileID: 313352755}
   tileType: 0
+  taken: 0
 --- !u!65 &1363090514
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61517,6 +61810,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2131307910}
   iconObj: {fileID: 233692627}
   tileType: 0
+  taken: 0
 --- !u!65 &1365437105
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61628,6 +61922,7 @@ MonoBehaviour:
   centerPoint: {fileID: 540770533}
   iconObj: {fileID: 355690743}
   tileType: 0
+  taken: 0
 --- !u!65 &1365881012
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61903,6 +62198,7 @@ MonoBehaviour:
   centerPoint: {fileID: 858948496}
   iconObj: {fileID: 1644627882}
   tileType: 0
+  taken: 0
 --- !u!65 &1368488376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62093,6 +62389,7 @@ MonoBehaviour:
   centerPoint: {fileID: 739713803}
   iconObj: {fileID: 1837604377}
   tileType: 0
+  taken: 0
 --- !u!65 &1372684990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62599,6 +62896,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1798211411}
   iconObj: {fileID: 8811674}
   tileType: 0
+  taken: 0
 --- !u!65 &1383561477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62710,6 +63008,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1380752742}
   iconObj: {fileID: 667976730}
   tileType: 0
+  taken: 0
 --- !u!65 &1383679034
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62979,6 +63278,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1096273233}
   iconObj: {fileID: 43431763}
   tileType: 0
+  taken: 0
 --- !u!65 &1392096909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63090,6 +63390,7 @@ MonoBehaviour:
   centerPoint: {fileID: 726339867}
   iconObj: {fileID: 574522576}
   tileType: 0
+  taken: 0
 --- !u!65 &1392707199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63517,6 +63818,7 @@ MonoBehaviour:
   centerPoint: {fileID: 97300472}
   iconObj: {fileID: 1165455571}
   tileType: 0
+  taken: 0
 --- !u!65 &1397913691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63865,6 +64167,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1240260336}
   iconObj: {fileID: 1134430647}
   tileType: 0
+  taken: 0
 --- !u!65 &1404103805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64055,6 +64358,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1939406996}
   iconObj: {fileID: 1198277788}
   tileType: 0
+  taken: 0
 --- !u!65 &1405606711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64245,6 +64549,7 @@ MonoBehaviour:
   centerPoint: {fileID: 616198263}
   iconObj: {fileID: 1261465059}
   tileType: 0
+  taken: 0
 --- !u!65 &1413027937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64356,6 +64661,7 @@ MonoBehaviour:
   centerPoint: {fileID: 318666670}
   iconObj: {fileID: 1915905388}
   tileType: 0
+  taken: 0
 --- !u!65 &1416035722
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65020,6 +65326,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1214618880}
   iconObj: {fileID: 520192310}
   tileType: 0
+  taken: 0
 --- !u!65 &1427444574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65131,6 +65438,7 @@ MonoBehaviour:
   centerPoint: {fileID: 775855956}
   iconObj: {fileID: 1155801127}
   tileType: 0
+  taken: 0
 --- !u!65 &1427528600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65242,6 +65550,7 @@ MonoBehaviour:
   centerPoint: {fileID: 551190722}
   iconObj: {fileID: 1591687071}
   tileType: 0
+  taken: 0
 --- !u!65 &1430114222
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65511,6 +65820,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1773835055}
   iconObj: {fileID: 421102622}
   tileType: 0
+  taken: 0
 --- !u!65 &1432210074
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65701,6 +66011,7 @@ MonoBehaviour:
   centerPoint: {fileID: 957359788}
   iconObj: {fileID: 1047176091}
   tileType: 0
+  taken: 0
 --- !u!65 &1433689787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65891,6 +66202,7 @@ MonoBehaviour:
   centerPoint: {fileID: 946778441}
   iconObj: {fileID: 1082813562}
   tileType: 0
+  taken: 0
 --- !u!65 &1439760076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66081,6 +66393,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2009576520}
   iconObj: {fileID: 275093672}
   tileType: 0
+  taken: 0
 --- !u!65 &1443065870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66429,6 +66742,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1615324982}
   iconObj: {fileID: 1653702358}
   tileType: 0
+  taken: 0
 --- !u!65 &1445807676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66540,6 +66854,7 @@ MonoBehaviour:
   centerPoint: {fileID: 274235147}
   iconObj: {fileID: 139890736}
   tileType: 0
+  taken: 0
 --- !u!65 &1450179610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66651,6 +66966,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1253900193}
   iconObj: {fileID: 1372762128}
   tileType: 0
+  taken: 0
 --- !u!65 &1452401488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66762,6 +67078,7 @@ MonoBehaviour:
   centerPoint: {fileID: 514147600}
   iconObj: {fileID: 610355787}
   tileType: 0
+  taken: 0
 --- !u!65 &1454485657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67110,6 +67427,7 @@ MonoBehaviour:
   centerPoint: {fileID: 582756011}
   iconObj: {fileID: 1054958320}
   tileType: 0
+  taken: 0
 --- !u!65 &1460973144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67221,6 +67539,7 @@ MonoBehaviour:
   centerPoint: {fileID: 133845339}
   iconObj: {fileID: 1337115171}
   tileType: 0
+  taken: 0
 --- !u!65 &1463752891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67490,6 +67809,7 @@ MonoBehaviour:
   centerPoint: {fileID: 362525742}
   iconObj: {fileID: 61386833}
   tileType: 0
+  taken: 0
 --- !u!65 &1479831126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67680,6 +68000,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1275385554}
   iconObj: {fileID: 1630049461}
   tileType: 0
+  taken: 0
 --- !u!65 &1480998240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67949,6 +68270,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1057068512}
   iconObj: {fileID: 1578110574}
   tileType: 0
+  taken: 0
 --- !u!65 &1492378168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68139,6 +68461,7 @@ MonoBehaviour:
   centerPoint: {fileID: 183179106}
   iconObj: {fileID: 161789866}
   tileType: 0
+  taken: 0
 --- !u!65 &1493939915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68250,6 +68573,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1171900094}
   iconObj: {fileID: 2054087917}
   tileType: 0
+  taken: 0
 --- !u!65 &1494677460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68361,6 +68685,7 @@ MonoBehaviour:
   centerPoint: {fileID: 59179896}
   iconObj: {fileID: 503737668}
   tileType: 0
+  taken: 0
 --- !u!65 &1494768713
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68630,6 +68955,7 @@ MonoBehaviour:
   centerPoint: {fileID: 561656559}
   iconObj: {fileID: 2049255768}
   tileType: 0
+  taken: 0
 --- !u!65 &1499909913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68899,6 +69225,7 @@ MonoBehaviour:
   centerPoint: {fileID: 799501442}
   iconObj: {fileID: 997664940}
   tileType: 0
+  taken: 0
 --- !u!65 &1507064973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69010,6 +69337,7 @@ MonoBehaviour:
   centerPoint: {fileID: 95565387}
   iconObj: {fileID: 88059161}
   tileType: 0
+  taken: 0
 --- !u!65 &1514170386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69911,6 +70239,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1571770415}
   iconObj: {fileID: 416222811}
   tileType: 0
+  taken: 0
 --- !u!65 &1546833782
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70022,6 +70351,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1890713378}
   iconObj: {fileID: 453384088}
   tileType: 0
+  taken: 0
 --- !u!65 &1550065304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70528,6 +70858,7 @@ MonoBehaviour:
   centerPoint: {fileID: 708936247}
   iconObj: {fileID: 1395648742}
   tileType: 0
+  taken: 0
 --- !u!65 &1564737013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70718,6 +71049,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1714106348}
   iconObj: {fileID: 833439379}
   tileType: 0
+  taken: 0
 --- !u!65 &1565653826
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70829,6 +71161,7 @@ MonoBehaviour:
   centerPoint: {fileID: 450555906}
   iconObj: {fileID: 222996847}
   tileType: 0
+  taken: 0
 --- !u!65 &1568376373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71019,6 +71352,7 @@ MonoBehaviour:
   centerPoint: {fileID: 844567444}
   iconObj: {fileID: 971098830}
   tileType: 0
+  taken: 0
 --- !u!65 &1570728597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71288,6 +71622,7 @@ MonoBehaviour:
   centerPoint: {fileID: 487550056}
   iconObj: {fileID: 507408083}
   tileType: 0
+  taken: 0
 --- !u!65 &1572520681
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71715,6 +72050,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1312193907}
   iconObj: {fileID: 1135170102}
   tileType: 0
+  taken: 0
 --- !u!65 &1578835461
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71905,6 +72241,7 @@ MonoBehaviour:
   centerPoint: {fileID: 520210432}
   iconObj: {fileID: 1436086078}
   tileType: 0
+  taken: 0
 --- !u!65 &1581152809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72332,6 +72669,7 @@ MonoBehaviour:
   centerPoint: {fileID: 153047822}
   iconObj: {fileID: 1853203275}
   tileType: 0
+  taken: 0
 --- !u!65 &1600478037
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72443,6 +72781,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2043230708}
   iconObj: {fileID: 1065587618}
   tileType: 0
+  taken: 0
 --- !u!65 &1602154981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72712,6 +73051,7 @@ MonoBehaviour:
   centerPoint: {fileID: 195791398}
   iconObj: {fileID: 437727545}
   tileType: 0
+  taken: 0
 --- !u!65 &1607459911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72981,6 +73321,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1979012438}
   iconObj: {fileID: 476032762}
   tileType: 0
+  taken: 0
 --- !u!65 &1614009998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73250,6 +73591,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1287605560}
   iconObj: {fileID: 1851186358}
   tileType: 0
+  taken: 0
 --- !u!65 &1618422294
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73440,6 +73782,7 @@ MonoBehaviour:
   centerPoint: {fileID: 695348966}
   iconObj: {fileID: 1891954696}
   tileType: 0
+  taken: 0
 --- !u!65 &1629757800
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73709,6 +74052,7 @@ MonoBehaviour:
   centerPoint: {fileID: 421242288}
   iconObj: {fileID: 877683326}
   tileType: 0
+  taken: 0
 --- !u!65 &1632874136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73978,6 +74322,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1881118761}
   iconObj: {fileID: 1361610521}
   tileType: 0
+  taken: 0
 --- !u!65 &1649999405
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74326,6 +74671,7 @@ MonoBehaviour:
   centerPoint: {fileID: 897605400}
   iconObj: {fileID: 293201530}
   tileType: 0
+  taken: 0
 --- !u!65 &1653490280
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74595,6 +74941,7 @@ MonoBehaviour:
   centerPoint: {fileID: 992259374}
   iconObj: {fileID: 293001226}
   tileType: 0
+  taken: 0
 --- !u!65 &1655661461
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74864,6 +75211,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1884569835}
   iconObj: {fileID: 1764641861}
   tileType: 0
+  taken: 0
 --- !u!65 &1656780821
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -75212,6 +75560,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1258347486}
   iconObj: {fileID: 207421768}
   tileType: 0
+  taken: 0
 --- !u!65 &1664055440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76192,6 +76541,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1444524580}
   iconObj: {fileID: 1788627775}
   tileType: 0
+  taken: 0
 --- !u!65 &1694019589
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76303,6 +76653,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1552606268}
   iconObj: {fileID: 1792832212}
   tileType: 0
+  taken: 0
 --- !u!65 &1694806211
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76414,6 +76765,7 @@ MonoBehaviour:
   centerPoint: {fileID: 870863878}
   iconObj: {fileID: 341480623}
   tileType: 0
+  taken: 0
 --- !u!65 &1695288560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76762,6 +77114,7 @@ MonoBehaviour:
   centerPoint: {fileID: 937166869}
   iconObj: {fileID: 1260672568}
   tileType: 0
+  taken: 0
 --- !u!65 &1706313900
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76873,6 +77226,7 @@ MonoBehaviour:
   centerPoint: {fileID: 911338526}
   iconObj: {fileID: 554898406}
   tileType: 0
+  taken: 0
 --- !u!65 &1706566135
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76984,6 +77338,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1809261105}
   iconObj: {fileID: 1655962726}
   tileType: 0
+  taken: 0
 --- !u!65 &1707265337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77095,6 +77450,7 @@ MonoBehaviour:
   centerPoint: {fileID: 912582293}
   iconObj: {fileID: 63788854}
   tileType: 0
+  taken: 0
 --- !u!65 &1707739044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77364,6 +77720,7 @@ MonoBehaviour:
   centerPoint: {fileID: 114558767}
   iconObj: {fileID: 982896962}
   tileType: 0
+  taken: 0
 --- !u!65 &1710196749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77870,6 +78227,7 @@ MonoBehaviour:
   centerPoint: {fileID: 591886533}
   iconObj: {fileID: 1652054174}
   tileType: 0
+  taken: 0
 --- !u!65 &1720460683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78139,6 +78497,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1869898203}
   iconObj: {fileID: 481876382}
   tileType: 0
+  taken: 0
 --- !u!65 &1728427905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78329,6 +78688,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1293306529}
   iconObj: {fileID: 866705760}
   tileType: 0
+  taken: 0
 --- !u!65 &1731074795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78519,6 +78879,7 @@ MonoBehaviour:
   centerPoint: {fileID: 397814761}
   iconObj: {fileID: 33157123}
   tileType: 0
+  taken: 0
 --- !u!65 &1732930327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78630,6 +78991,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1705797970}
   iconObj: {fileID: 151528227}
   tileType: 0
+  taken: 0
 --- !u!65 &1739402992
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78820,6 +79182,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1403605951}
   iconObj: {fileID: 328017633}
   tileType: 0
+  taken: 0
 --- !u!65 &1742784887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78931,6 +79294,7 @@ MonoBehaviour:
   centerPoint: {fileID: 333041391}
   iconObj: {fileID: 1327955747}
   tileType: 0
+  taken: 0
 --- !u!65 &1743911449
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79200,6 +79564,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1805514801}
   iconObj: {fileID: 141254229}
   tileType: 0
+  taken: 0
 --- !u!65 &1749804814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79390,6 +79755,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1770257402}
   iconObj: {fileID: 685250917}
   tileType: 0
+  taken: 0
 --- !u!65 &1758645398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79501,6 +79867,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1162034760}
   iconObj: {fileID: 662234324}
   tileType: 0
+  taken: 0
 --- !u!65 &1758872441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79691,6 +80058,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1665564703}
   iconObj: {fileID: 704050304}
   tileType: 0
+  taken: 0
 --- !u!65 &1762721856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79960,6 +80328,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1948383061}
   iconObj: {fileID: 1133885664}
   tileType: 0
+  taken: 0
 --- !u!65 &1764748137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80308,6 +80677,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1709348313}
   iconObj: {fileID: 1920002492}
   tileType: 0
+  taken: 0
 --- !u!65 &1771793188
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80498,6 +80868,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1425738868}
   iconObj: {fileID: 2087605765}
   tileType: 0
+  taken: 0
 --- !u!65 &1774784359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80767,6 +81138,7 @@ MonoBehaviour:
   centerPoint: {fileID: 864594463}
   iconObj: {fileID: 18257665}
   tileType: 0
+  taken: 0
 --- !u!65 &1782634329
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81589,6 +81961,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1316854595}
   iconObj: {fileID: 1241980308}
   tileType: 0
+  taken: 0
 --- !u!65 &1793164076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82174,6 +82547,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1786175182}
   iconObj: {fileID: 1324305164}
   tileType: 0
+  taken: 0
 --- !u!65 &1809364667
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82364,6 +82738,7 @@ MonoBehaviour:
   centerPoint: {fileID: 533461137}
   iconObj: {fileID: 1879546631}
   tileType: 0
+  taken: 0
 --- !u!65 &1810832358
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82475,6 +82850,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2140184584}
   iconObj: {fileID: 754203532}
   tileType: 0
+  taken: 0
 --- !u!65 &1811447853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82665,6 +83041,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1785693523}
   iconObj: {fileID: 1416591095}
   tileType: 0
+  taken: 0
 --- !u!65 &1816148740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82934,6 +83311,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1465094066}
   iconObj: {fileID: 101600722}
   tileType: 0
+  taken: 0
 --- !u!65 &1822518259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83045,6 +83423,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2080158385}
   iconObj: {fileID: 152431948}
   tileType: 0
+  taken: 0
 --- !u!65 &1828155235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83393,6 +83772,7 @@ MonoBehaviour:
   centerPoint: {fileID: 549848376}
   iconObj: {fileID: 1686192928}
   tileType: 0
+  taken: 0
 --- !u!65 &1838837772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83583,6 +83963,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1956143063}
   iconObj: {fileID: 2143752605}
   tileType: 0
+  taken: 0
 --- !u!65 &1841555848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83852,6 +84233,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1362752147}
   iconObj: {fileID: 1991542366}
   tileType: 0
+  taken: 0
 --- !u!65 &1846858644
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84437,6 +84819,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1611653533}
   iconObj: {fileID: 1970627009}
   tileType: 0
+  taken: 0
 --- !u!65 &1856433233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -85022,6 +85405,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1895191857}
   iconObj: {fileID: 1047047761}
   tileType: 0
+  taken: 0
 --- !u!65 &1872493115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -85142,7 +85526,7 @@ PrefabInstance:
     - target: {fileID: 8869721157737501652, guid: aca49c64412032b4183262567a2b62c6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8869721157737501652, guid: aca49c64412032b4183262567a2b62c6,
         type: 3}
@@ -85370,6 +85754,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1755302195}
   iconObj: {fileID: 750303501}
   tileType: 0
+  taken: 0
 --- !u!65 &1877573692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -85560,6 +85945,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1217481212}
   iconObj: {fileID: 164664102}
   tileType: 0
+  taken: 0
 --- !u!65 &1878171330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -85671,6 +86057,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1178907412}
   iconObj: {fileID: 430897438}
   tileType: 0
+  taken: 0
 --- !u!65 &1879257773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86493,6 +86880,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1204264270}
   iconObj: {fileID: 1029317747}
   tileType: 0
+  taken: 0
 --- !u!65 &1891974943
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86762,6 +87150,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1186069671}
   iconObj: {fileID: 1440384684}
   tileType: 0
+  taken: 0
 --- !u!65 &1897948488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87031,6 +87420,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1559579342}
   iconObj: {fileID: 1881523616}
   tileType: 0
+  taken: 0
 --- !u!65 &1903306468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87142,6 +87532,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2061441810}
   iconObj: {fileID: 1728558425}
   tileType: 0
+  taken: 0
 --- !u!65 &1904340691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87332,6 +87723,7 @@ MonoBehaviour:
   centerPoint: {fileID: 705167143}
   iconObj: {fileID: 117659904}
   tileType: 0
+  taken: 0
 --- !u!65 &1912470132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87443,6 +87835,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1963278838}
   iconObj: {fileID: 2003787966}
   tileType: 0
+  taken: 0
 --- !u!65 &1912568666
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87712,6 +88105,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2130785992}
   iconObj: {fileID: 934290168}
   tileType: 0
+  taken: 0
 --- !u!65 &1921292323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87823,6 +88217,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1669806696}
   iconObj: {fileID: 953509247}
   tileType: 0
+  taken: 0
 --- !u!65 &1922462558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -88250,6 +88645,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1850522777}
   iconObj: {fileID: 1493050879}
   tileType: 0
+  taken: 0
 --- !u!65 &1934369139
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -88361,6 +88757,7 @@ MonoBehaviour:
   centerPoint: {fileID: 222383284}
   iconObj: {fileID: 1195489299}
   tileType: 0
+  taken: 0
 --- !u!65 &1936253002
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -88709,6 +89106,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1788652008}
   iconObj: {fileID: 956595688}
   tileType: 0
+  taken: 0
 --- !u!65 &1947941060
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -88899,6 +89297,7 @@ MonoBehaviour:
   centerPoint: {fileID: 988256011}
   iconObj: {fileID: 90832627}
   tileType: 0
+  taken: 0
 --- !u!65 &1952481985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89613,6 +90012,7 @@ MonoBehaviour:
   centerPoint: {fileID: 852341430}
   iconObj: {fileID: 229860219}
   tileType: 0
+  taken: 0
 --- !u!65 &1967766094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89724,6 +90124,7 @@ MonoBehaviour:
   centerPoint: {fileID: 788803166}
   iconObj: {fileID: 1309843409}
   tileType: 0
+  taken: 0
 --- !u!65 &1967876052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89993,6 +90394,7 @@ MonoBehaviour:
   centerPoint: {fileID: 73693522}
   iconObj: {fileID: 363168385}
   tileType: 0
+  taken: 0
 --- !u!65 &1973607341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -90262,6 +90664,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1481196277}
   iconObj: {fileID: 1022396796}
   tileType: 0
+  taken: 0
 --- !u!65 &1983429842
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -90703,7 +91106,7 @@ PrefabInstance:
     - target: {fileID: 4770325277785231743, guid: 42a530ac79fbda144beb07ab6fc563c7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4770325277785231743, guid: 42a530ac79fbda144beb07ab6fc563c7,
         type: 3}
@@ -91104,6 +91507,7 @@ MonoBehaviour:
   centerPoint: {fileID: 737983626}
   iconObj: {fileID: 369433018}
   tileType: 0
+  taken: 0
 --- !u!65 &1995650427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -91215,6 +91619,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1716132358}
   iconObj: {fileID: 594273119}
   tileType: 0
+  taken: 0
 --- !u!65 &1995832814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -91484,6 +91889,7 @@ MonoBehaviour:
   centerPoint: {fileID: 2002363458}
   iconObj: {fileID: 251792562}
   tileType: 0
+  taken: 0
 --- !u!65 &2002783930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92083,6 +92489,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1332723967}
   iconObj: {fileID: 934194627}
   tileType: 0
+  taken: 0
 --- !u!65 &2007714721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92194,6 +92601,7 @@ MonoBehaviour:
   centerPoint: {fileID: 860081789}
   iconObj: {fileID: 1615558935}
   tileType: 0
+  taken: 0
 --- !u!65 &2008040023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92542,6 +92950,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1988036818}
   iconObj: {fileID: 250573179}
   tileType: 0
+  taken: 0
 --- !u!65 &2014938530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92732,6 +93141,7 @@ MonoBehaviour:
   centerPoint: {fileID: 809117690}
   iconObj: {fileID: 690899679}
   tileType: 0
+  taken: 0
 --- !u!65 &2022229834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92843,6 +93253,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1701094700}
   iconObj: {fileID: 1210523569}
   tileType: 0
+  taken: 0
 --- !u!65 &2023079452
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93191,6 +93602,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1839975616}
   iconObj: {fileID: 1682313412}
   tileType: 0
+  taken: 0
 --- !u!65 &2035550230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93302,6 +93714,7 @@ MonoBehaviour:
   centerPoint: {fileID: 800358279}
   iconObj: {fileID: 860998829}
   tileType: 0
+  taken: 0
 --- !u!65 &2036644066
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93571,6 +93984,7 @@ MonoBehaviour:
   centerPoint: {fileID: 72000259}
   iconObj: {fileID: 220881891}
   tileType: 0
+  taken: 0
 --- !u!65 &2038514553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93682,6 +94096,7 @@ MonoBehaviour:
   centerPoint: {fileID: 505762595}
   iconObj: {fileID: 1460830574}
   tileType: 0
+  taken: 0
 --- !u!65 &2040328056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93872,6 +94287,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1411903192}
   iconObj: {fileID: 1603838953}
   tileType: 0
+  taken: 0
 --- !u!65 &2045476848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94299,6 +94715,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1296914357}
   iconObj: {fileID: 1280507058}
   tileType: 0
+  taken: 0
 --- !u!65 &2059889164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94963,6 +95380,7 @@ MonoBehaviour:
   centerPoint: {fileID: 818273140}
   iconObj: {fileID: 285631938}
   tileType: 0
+  taken: 0
 --- !u!65 &2084704723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -95311,6 +95729,7 @@ MonoBehaviour:
   centerPoint: {fileID: 972118737}
   iconObj: {fileID: 715497028}
   tileType: 0
+  taken: 0
 --- !u!65 &2092998686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -95422,6 +95841,7 @@ MonoBehaviour:
   centerPoint: {fileID: 906782045}
   iconObj: {fileID: 1531920337}
   tileType: 0
+  taken: 0
 --- !u!65 &2093273502
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -95533,6 +95953,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1343950904}
   iconObj: {fileID: 1078956005}
   tileType: 0
+  taken: 0
 --- !u!65 &2093600357
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -95644,6 +96065,7 @@ MonoBehaviour:
   centerPoint: {fileID: 724293058}
   iconObj: {fileID: 743007994}
   tileType: 0
+  taken: 0
 --- !u!65 &2093636756
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -95913,6 +96335,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1310647902}
   iconObj: {fileID: 890718472}
   tileType: 0
+  taken: 0
 --- !u!65 &2100015549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96024,6 +96447,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1397919980}
   iconObj: {fileID: 913541831}
   tileType: 0
+  taken: 0
 --- !u!65 &2100071097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96214,6 +96638,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1044605501}
   iconObj: {fileID: 1292780724}
   tileType: 0
+  taken: 0
 --- !u!65 &2106123117
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96325,6 +96750,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1419408691}
   iconObj: {fileID: 1927358085}
   tileType: 0
+  taken: 0
 --- !u!65 &2111185730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96608,6 +97034,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1343743998}
   iconObj: {fileID: 503552604}
   tileType: 0
+  taken: 0
 --- !u!65 &2120559189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96798,6 +97225,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1395904051}
   iconObj: {fileID: 850713835}
   tileType: 0
+  taken: 0
 --- !u!65 &2123209438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96909,6 +97337,7 @@ MonoBehaviour:
   centerPoint: {fileID: 651154573}
   iconObj: {fileID: 67247316}
   tileType: 0
+  taken: 0
 --- !u!65 &2124352758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -97257,6 +97686,7 @@ MonoBehaviour:
   centerPoint: {fileID: 52108844}
   iconObj: {fileID: 1274797855}
   tileType: 0
+  taken: 0
 --- !u!65 &2131138405
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -97447,6 +97877,7 @@ MonoBehaviour:
   centerPoint: {fileID: 1715302272}
   iconObj: {fileID: 1901170303}
   tileType: 0
+  taken: 0
 --- !u!65 &2134053501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -97637,6 +98068,7 @@ MonoBehaviour:
   centerPoint: {fileID: 602195076}
   iconObj: {fileID: 1052012980}
   tileType: 0
+  taken: 0
 --- !u!65 &2142980106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -97906,6 +98338,7 @@ MonoBehaviour:
   centerPoint: {fileID: 552277336}
   iconObj: {fileID: 103607892}
   tileType: 0
+  taken: 0
 --- !u!65 &2147432006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -98031,7 +98464,7 @@ PrefabInstance:
     - target: {fileID: 4770325277785231743, guid: 42a530ac79fbda144beb07ab6fc563c7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4770325277785231743, guid: 42a530ac79fbda144beb07ab6fc563c7,
         type: 3}
@@ -98311,7 +98744,7 @@ PrefabInstance:
     - target: {fileID: 8869721157737501652, guid: aca49c64412032b4183262567a2b62c6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8869721157737501652, guid: aca49c64412032b4183262567a2b62c6,
         type: 3}
@@ -98327,6 +98760,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869721157737501655, guid: aca49c64412032b4183262567a2b62c6,
+        type: 3}
+      propertyPath: weapon.accuracy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869721157737501655, guid: aca49c64412032b4183262567a2b62c6,
+        type: 3}
+      propertyPath: stats.aim
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca49c64412032b4183262567a2b62c6, type: 3}

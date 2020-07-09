@@ -59,8 +59,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  partName: Head
-  hitMultiplier: 0.65
+  _target:
+    targetName: Head
+    hitMod: 0.65
 --- !u!54 &9211123317097937030
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,8 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  partName: Body
-  hitMultiplier: 1
+  _target:
+    targetName: Body
+    hitMod: 1
 --- !u!54 &6750166224579351221
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -233,14 +235,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    hp: 0
+    hpmax: 1
     aim: 0
-    dodge: 10
+    dodge: 5
   moveRange: 3
-  tilesInRange: []
-  currentTile: {fileID: 0}
-  agent: {fileID: 8296172667855293776}
-  mc: {fileID: 0}
 --- !u!195 &8296172667855293776
 NavMeshAgent:
   m_ObjectHideFlags: 0

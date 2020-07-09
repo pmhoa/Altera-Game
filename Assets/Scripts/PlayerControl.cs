@@ -13,8 +13,8 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit
     public bool moving { get; set; }
     private LineRenderer line;
     private TileScript currentTile = null;
-    [SerializeField] private WeaponClass weapon;
-    public WeaponClass Weapon { get => weapon; }
+    [SerializeField] private WeaponStats weapon;
+    public WeaponStats Weapon { get => weapon; }
 
     [SerializeField] private UnitStats stats;
     public UnitStats Stats { get => stats; }
@@ -24,8 +24,10 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit
     private CameraControl cam;
     public Transform rotator;
 
-    [SerializeField] private GameObject bulletPf = null;
-    [SerializeField] private Transform bulletPoint = null;
+    [SerializeField] private GameObject bulletPf;
+    public Transform bulletPoint;
+
+
     public bool canShoot;
     public class MoveSet
     {
@@ -72,12 +74,24 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit
         mc.playerTurn = true;
         mc.TileCheck();
     }
+    public void Death()
+    {
+        gameObject.SetActive(false);
+        mc.UpdateUnits();
+    }
     public void MoveUnit(TileScript tile)
     {
+
         if (currentTile)
-            currentTile.Taken = false;
+        {
+            TileScript lasttile = currentTile;
+            lasttile.Taken = false;
+        }
+
+        currentTile = tile;
+        currentTile.Taken = true;
         MovePlayer(tile.transform.position);
-        tile.Taken = true;
+
     }
     public void MovePlayer(Vector3 pos)
     {
@@ -103,13 +117,19 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit
     public void Fire()
     {
         if (Moves.action == true)
-            StartCoroutine(FireMain());
+            StartCoroutine(FireMain(cam.hitChange));
     }
-    public IEnumerator FireMain()
+    public IEnumerator FireMain(float hitChange)
     {
         GameObject nbullet = Instantiate(bulletPf, bulletPoint);
         Bullets nb = nbullet.GetComponent<Bullets>();
         nb.speed = weapon.Speed;
+        nb.hit.Dmg = weapon.BaseDmg;
+
+        float hitRandom = Random.value;
+        if (hitChange < hitRandom)
+            nb.transform.eulerAngles = new Vector3(90, 23, 52);
+
         nb.Fire();
         nbullet.transform.SetParent(null);
         canShoot = false;
@@ -173,7 +193,7 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit
             change = 0.03f;
         return change;
     }
-    public float HitRange(WeaponClass weapon, Transform target)
+    public float HitRange(WeaponStats weapon, Transform target)
     {
         float distance = Vector3.Distance(transform.position, target.position);
         float[] ranges = weapon.Ranges;

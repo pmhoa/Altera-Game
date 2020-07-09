@@ -24,11 +24,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876639688446976101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0.46000004, z: 6.6900005}
+  m_LocalPosition: {x: -0.3, y: 0.46000004, z: 6.690001}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 8869721157568009638}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8869721157176420685
 GameObject:
@@ -152,8 +152,8 @@ Transform:
   m_LocalPosition: {x: 0.165, y: 1.397, z: 0.004}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
-  - {fileID: 9042535841386597460}
   - {fileID: 4498287511131732530}
+  - {fileID: 9042535841386597460}
   m_Father: {fileID: 8869721157737501652}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -301,8 +301,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7639911, z: 1}
-  m_Center: {x: 0, y: 0.89630926, z: 0}
+  m_Size: {x: 0.5481458, y: 1.7639911, z: 0.2982955}
+  m_Center: {x: 0.028505817, y: 0.89630926, z: 0.08463216}
 --- !u!195 &8869721157737501654
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -339,6 +339,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 4.1
   Agent: {fileID: 0}
+  weapon:
+    accuracy: 10
+    baseDmg: 5
+    ranges:
+    - 0
+    - 2
+    - 6
+    - 12
+    - 14
+    speed: 14
+  stats:
+    hpmax: 0
+    aim: 10
+    dodge: 0
   rotator: {fileID: 8869721157568009638}
   bulletPf: {fileID: 8140414603763567815, guid: e5bf8fce82804e54683f544277b5b763,
     type: 3}
@@ -664,7 +678,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 602482f6ed0e25142beb3375479fae3b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 602482f6ed0e25142beb3375479fae3b,
         type: 3}

@@ -7,16 +7,18 @@ public class EnemyScript : MonoBehaviour, IUnit
 {
     // Start is called before the first frame update
     public UnitStats stats;
-    public float moveRange;
-    public List<TileScript> tilesInRange;
-    public TileScript currentTile;
-    public NavMeshAgent agent;
-    public MainControl mc;
-
+    [SerializeField] private float moveRange;
+    private List<TileScript> tilesInRange = new List<TileScript>();
+    private TileScript currentTile;
+    private NavMeshAgent agent;
+    private MainControl mc;
+    
 
     private void Start()
     {
         mc = MainControl.Instance;
+        stats.Hp = stats.Hpmax;
+        agent = GetComponent<NavMeshAgent>();
     }
     public void FindTiles()
     {
@@ -38,17 +40,21 @@ public class EnemyScript : MonoBehaviour, IUnit
         StopCoroutine("MoveRotation");
         StartCoroutine("MoveRotation");
     }
+    public void Death()
+    {
+        gameObject.SetActive(false);
+        mc.UpdateUnits();
+    }
+
     public void MoveUnit(TileScript tile)
     {
         agent.ResetPath();
         if (currentTile)
         {
             currentTile.Taken = false;
-            if (currentTile.InRange)
-                currentTile.ChangeState(1);
-            else
-                currentTile.ChangeState(0);
+            currentTile.ChangeState(0);
         }
+        currentTile = tile;
         agent.SetDestination(tile.transform.position);
         tile.Taken = true;
         tile.ChangeColor(3);

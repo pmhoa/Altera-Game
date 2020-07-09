@@ -23,7 +23,10 @@ public class TileScript : MonoBehaviour
     [SerializeField] private GameObject iconObj = null;
     [SerializeField] private int tileType;
     public bool InRange { get; private set; }
-    public bool Taken { get; set; }
+
+    [SerializeField] private bool taken;
+    public bool Taken { get => taken; set => taken = value; }
+
     private Transform rotator;
     private void Awake()
     {

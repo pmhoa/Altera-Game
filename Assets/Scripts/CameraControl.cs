@@ -19,6 +19,7 @@ public class CameraControl : MonoBehaviour
     public PlayerControl pc;
     public MainControl mc;
     private UserInterface ui;
+    public float hitChange;
 
     private void Start()
     {
@@ -55,19 +56,28 @@ public class CameraControl : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, 100))
             {
-                if (hit.transform.gameObject.tag == "Enemy")
+                if (hit.transform.gameObject.GetComponent<ITargetable>() != null)
                 {
-                    TargetPart tp = hit.transform.GetComponent<TargetPart>();
-                    float hitchange = pc.HitChange(pc.Stats.Aim, pc.Weapon.Accuracy, pc.HitRange(pc.Weapon, hit.transform), tp.parent.stats.Dodge) * tp.hitMultiplier;
-                    ui.targetText.text = $"{tp.partName} {hitchange * 100:F1}%";
+                    ITargetable targetable = hit.transform.gameObject.GetComponent<ITargetable>();
+                    Target tp = targetable.Target;
+                    UnitStats stats = targetable.stats();
+                    hitChange = targetable.HitChange(pc.Stats.Aim, pc.Weapon.Accuracy, pc.HitRange(pc.Weapon, hit.transform), stats.Dodge) * tp.hitMod;
+                    pc.bulletPoint.transform.LookAt(hit.point);
+                    ui.targetText.text = $"{tp.targetName} {hitChange * 100:F1}%";
                     ui.targetText.color = new Color32(240, 100, 100, 255);
                 }
                 else
                 {
                     ui.targetText.text = " ";
-                    ui.targetText.color = new Color32(240, 100, 100, 255);
+                    ui.targetText.color = new Color32(255, 255, 255, 255);
                 }
             }
+            else
+            {
+                ui.targetText.text = " ";
+                ui.targetText.color = new Color32(255, 255, 255, 255);
+            }
+            ui.crossHairImg.color = ui.targetText.color;
         }
     }
     public void ChangeCam()

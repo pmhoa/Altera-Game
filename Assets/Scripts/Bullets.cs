@@ -6,6 +6,7 @@ public class Bullets : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed;
+    public Hit hit = new Hit();
     private Rigidbody rb;
 
     void Awake()
@@ -27,7 +28,7 @@ public class Bullets : MonoBehaviour
         if (other.gameObject.GetComponent<IHit>() != null)
         {
             IHit hitobj = other.gameObject.GetComponent<IHit>();
-            hitobj.TakeHit(new Hit());
+            hitobj.TakeHit(hit);
             Destroy(gameObject);
         }
     }

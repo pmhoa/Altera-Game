@@ -51,26 +51,24 @@ public class MainControl : MonoBehaviour
             currentPc = unit;
             camControl.pc = unit;
         }
-        
-        foreach(GameObject unit in FindObjectsOfType<GameObject>())
-        {
-            if (unit.GetComponent<IUnit>() != null)
-            {
-                units.Add(unit);
-            }
-        }
+        UpdateUnits();
+
     }
     void Start()
     {
         NextTurn();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void UpdateUnits()
     {
-
+        units.Clear();
+        foreach (GameObject unit in FindObjectsOfType<GameObject>())
+        {
+            if (unit.GetComponent<IUnit>() != null && unit.activeSelf)
+            {
+                units.Add(unit);
+            }
+        }
     }
-
     public void TileCheck()
     {
         if (CheckTiles != null) CheckTiles.Invoke();

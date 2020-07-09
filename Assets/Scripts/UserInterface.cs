@@ -20,6 +20,7 @@ public class UserInterface : MonoBehaviour
     }
 
     public GameObject crossHair;
+    public Image crossHairImg;
     public Text targetText;
     public Button turn;
 }
