@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerControl : MonoBehaviour, IUnit
+public class PlayerControl : MonoBehaviour, IUnit, IHit
 {
-    public NavMeshAgent agent;
-    public float range;
+
     //public CapsuleCollider rangeColl;
-    public bool moving;
+    [SerializeField] private float range = 0;
+    public float Range { get => range; }
+    public NavMeshAgent Agent;
+    public bool moving { get; set; }
     private LineRenderer line;
     private TileScript currentTile = null;
-    public WeaponClass weapon;
-    public UnitStats stats;
+    [SerializeField] private WeaponClass weapon;
+    public WeaponClass Weapon { get => weapon; }
+
+    [SerializeField] private UnitStats stats;
+    public UnitStats Stats { get => stats; }
+
     //private bool playerTurn;
     private MainControl mc;
     private CameraControl cam;
+    public Transform rotator;
+
     [SerializeField] private GameObject bulletPf = null;
     [SerializeField] private Transform bulletPoint = null;
     public bool canShoot;
@@ -24,18 +32,21 @@ public class PlayerControl : MonoBehaviour, IUnit
         public bool move;
         public bool action;
     }
-    public MoveSet moves = new MoveSet();
+    private MoveSet moves = new MoveSet();
+    public MoveSet Moves { get => moves; set => moves = value; }
 
-
-    void Start()
+    private void Awake()
     {
-        moves.move = true;
-        moves.action = true;
-        agent = GetComponent<NavMeshAgent>();
+        Moves.move = true;
+        Moves.action = true;
+        Agent = GetComponent<NavMeshAgent>();
         line = GetComponent<LineRenderer>();
-        //rangeColl.radius = range;
         mc = MainControl.Instance;
         cam = mc.camControl;
+    }
+    void Start()
+    {
+        //rangeColl.radius = range;
         //StartCoroutine(MoveCheck());
     }
     private void Update()
@@ -49,6 +60,10 @@ public class PlayerControl : MonoBehaviour, IUnit
     {
         //playerTurn = true;
         return true;
+    }
+    public void TakeHit(Hit hit)
+    {
+        Debug.Log(hit.Dmg);
     }
     public void StartTurn()
     {
@@ -66,40 +81,40 @@ public class PlayerControl : MonoBehaviour, IUnit
     }
     public void MovePlayer(Vector3 pos)
     {
-        if (!moving && agent.enabled == true && moves.move == true)
+        if (!moving && Agent.enabled == true && Moves.move == true)
         {
             moving = true;
             ResetPath();
-            agent.SetDestination(pos);
+            Agent.SetDestination(pos);
             StartCoroutine(MoveCheck());
         }
     }
     public IEnumerator MoveCheck()
     {
         yield return new WaitForEndOfFrame();
-        while (agent.remainingDistance != 0)
+        while (Agent.remainingDistance != 0)
             yield return null;
         moving = false;
+        Moves.move = false;
         mc.TileCheck();
         UserInterface.Instance.turn.interactable = true;
-        moves.move = false;
         //EndTurn();
     }
     public void Fire()
     {
-        if (moves.action == true)
+        if (Moves.action == true)
             StartCoroutine(FireMain());
     }
     public IEnumerator FireMain()
     {
         GameObject nbullet = Instantiate(bulletPf, bulletPoint);
         Bullets nb = nbullet.GetComponent<Bullets>();
-        nb.speed = weapon.speed;
+        nb.speed = weapon.Speed;
         nb.Fire();
         nbullet.transform.SetParent(null);
         canShoot = false;
         cam.LockCam();
-        moves.action = false;
+        Moves.action = false;
         yield return new WaitForSeconds(1.5f);
         cam.ChangeCam();
         cam.LockCam();
@@ -114,8 +129,8 @@ public class PlayerControl : MonoBehaviour, IUnit
     }
     public void ResetMoves()
     {
-        moves.move = true;
-        moves.action = true;
+        Moves.move = true;
+        Moves.action = true;
         canShoot = false;
     }
     public void PathLine(NavMeshPath path)
@@ -148,7 +163,7 @@ public class PlayerControl : MonoBehaviour, IUnit
     }
     private void ResetPath()
     {
-        agent.ResetPath();
+        Agent.ResetPath();
         line.positionCount = 1;
     }
     public float HitChange(float aim, float acc, float range, float dodge)
@@ -161,7 +176,7 @@ public class PlayerControl : MonoBehaviour, IUnit
     public float HitRange(WeaponClass weapon, Transform target)
     {
         float distance = Vector3.Distance(transform.position, target.position);
-        float[] ranges = weapon.ranges;
+        float[] ranges = weapon.Ranges;
         //Debug.Log($"{distance}");
         if (distance >= ranges[4])
         {

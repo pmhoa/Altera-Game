@@ -337,23 +337,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6915864e24d764fabd56e9b90b9462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
   range: 4.1
-  moving: 0
-  weapon:
-    accuracy: 3
-    baseDmg: 0
-    ranges:
-    - 0
-    - 4
-    - 7
-    - 10
-    - 14
-    speed: 4
-  stats:
-    hp: 0
-    aim: 3
-    dodge: 0
+  Agent: {fileID: 0}
+  rotator: {fileID: 8869721157568009638}
   bulletPf: {fileID: 8140414603763567815, guid: e5bf8fce82804e54683f544277b5b763,
     type: 3}
   bulletPoint: {fileID: 9042535841386597460}

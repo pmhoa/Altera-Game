@@ -58,7 +58,7 @@ public class CameraControl : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Enemy")
                 {
                     TargetPart tp = hit.transform.GetComponent<TargetPart>();
-                    float hitchange = pc.HitChange(pc.stats.Aim, pc.weapon.accuracy, pc.HitRange(pc.weapon, hit.transform), tp.parent.stats.Dodge) * tp.hitMultiplier;
+                    float hitchange = pc.HitChange(pc.Stats.Aim, pc.Weapon.Accuracy, pc.HitRange(pc.Weapon, hit.transform), tp.parent.stats.Dodge) * tp.hitMultiplier;
                     ui.targetText.text = $"{tp.partName} {hitchange * 100:F1}%";
                     ui.targetText.color = new Color32(240, 100, 100, 255);
                 }
@@ -103,6 +103,7 @@ public class CameraControl : MonoBehaviour
         changing = true;
         float t = 0;
         Vector3 rvector = new Vector3(rotation, 0, 0);
+        rotatorObj = pc.rotator;
         while (changing && t < 1f)
         {
             t += Time.deltaTime * 5f;
@@ -115,7 +116,7 @@ public class CameraControl : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            pc.agent.enabled = false;
+            pc.Agent.enabled = false;
             transform.SetParent(rotatorObj);
             transform.localPosition = rotatorObj.localPosition + offset;
             transform.localEulerAngles = Vector3.zero;
@@ -125,7 +126,7 @@ public class CameraControl : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            pc.agent.enabled = true;
+            pc.Agent.enabled = true;
             transform.SetParent(null);
             rotatorObj.localEulerAngles = Vector3.zero;
             ui.crossHair.SetActive(false);

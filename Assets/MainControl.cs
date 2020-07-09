@@ -40,15 +40,24 @@ public class MainControl : MonoBehaviour
         {
             tiles.Add(ts);
         }
+        /*
         foreach (EnemyScript unit in FindObjectsOfType<EnemyScript>())
         {
             units.Add(unit.transform.gameObject);
         }
+        */
         foreach (PlayerControl unit in FindObjectsOfType<PlayerControl>())
         {
-            units.Add(unit.transform.gameObject);
             currentPc = unit;
             camControl.pc = unit;
+        }
+        
+        foreach(GameObject unit in FindObjectsOfType<GameObject>())
+        {
+            if (unit.GetComponent<IUnit>() != null)
+            {
+                units.Add(unit);
+            }
         }
     }
     void Start()

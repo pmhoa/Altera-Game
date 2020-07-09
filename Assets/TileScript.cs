@@ -95,7 +95,7 @@ public class TileScript : MonoBehaviour
         InRange = CheckPcRange(currentPc);
         if (state != -1)
         {
-            if (currentPc.moving)
+            if (currentPc.moving || !currentPc.Moves.move)
             {
                 ChangeState(0);
             }
@@ -186,6 +186,6 @@ public class TileScript : MonoBehaviour
     }
     public bool CheckPcRange(PlayerControl pc)
     {
-        return CheckRange(pc.range, pc.agent, pc.transform);
+        return CheckRange(pc.Range, pc.Agent, pc.transform);
     }
 }
