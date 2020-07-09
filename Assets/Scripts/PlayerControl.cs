@@ -125,11 +125,9 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit
         Bullets nb = nbullet.GetComponent<Bullets>();
         nb.speed = weapon.Speed;
         nb.hit.Dmg = weapon.BaseDmg;
-
         float hitRandom = Random.value;
         if (hitChange < hitRandom)
             nb.transform.eulerAngles = new Vector3(90, 23, 52);
-
         nb.Fire();
         nbullet.transform.SetParent(null);
         canShoot = false;

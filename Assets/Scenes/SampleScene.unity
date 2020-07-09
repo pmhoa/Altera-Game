@@ -98771,6 +98771,11 @@ PrefabInstance:
       propertyPath: stats.aim
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8869721157737501655, guid: aca49c64412032b4183262567a2b62c6,
+        type: 3}
+      propertyPath: weapon.baseDmg
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca49c64412032b4183262567a2b62c6, type: 3}
 --- !u!1001 &9165352746712735411
