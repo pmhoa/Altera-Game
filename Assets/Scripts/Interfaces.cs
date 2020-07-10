@@ -7,6 +7,15 @@ public interface IUnit
     void StartTurn();
     void MoveUnit(TileScript tile);
     void Death();
+    void ResetMoves();
+    MoveSet Moves {get; set;}
+    UnitStats Stats { get; set; }
+
+}
+public class MoveSet
+{
+    public bool move;
+    public bool action;
 }
 public interface IHit
 {

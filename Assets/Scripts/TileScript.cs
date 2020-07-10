@@ -52,7 +52,7 @@ public class TileScript : MonoBehaviour
     {
         if (InRange && !Taken)
         {
-            mc.currentUnit.GetComponent<IUnit>().MoveUnit(this);
+            mc.currentUnit.MoveUnit(this);
         }
     }
     private void OnMouseEnter()

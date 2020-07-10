@@ -27,7 +27,8 @@ public class MainControl : MonoBehaviour
     public List<GameObject> units = new List<GameObject>();
     private int turnOrder = 0;
     public PlayerControl currentPc;
-    public GameObject currentUnit;
+    public GameObject currentUnitObj;
+    public IUnit currentUnit;
     public bool playerTurn;
     private List<TileScript> tiles = new List<TileScript>();
 
@@ -77,8 +78,9 @@ public class MainControl : MonoBehaviour
     {
         ui.turn.interactable = false;
         GameObject cu = units[turnOrder];
-        currentUnit = cu;
-        units[turnOrder].GetComponent<IUnit>().StartTurn();
+        currentUnitObj = cu;
+        currentUnit = units[turnOrder].GetComponent<IUnit>();
+        currentUnit.StartTurn();
         camControl.follow = cu.transform;
         if (turnOrder + 1 >= units.Count)
             turnOrder = 0;

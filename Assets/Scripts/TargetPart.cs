@@ -8,16 +8,16 @@ public class TargetPart : MonoBehaviour, IHit, ITargetable
     [SerializeField] private Target _target;
     public Target Target { get => _target; set => _target = value; }
 
-    public UnitStats stats() { return parent.stats; }
+    public UnitStats stats() { return parent.Stats; }
     private void Start()
     {
         parent = GetComponentInParent<EnemyScript>();
     }
     public void TakeHit(Hit hit)
     {
-        Debug.Log(hit.Dmg);
-        parent.stats.Hp -= hit.Dmg;
-        if (parent.stats.Hp <= 0)
+        //Debug.Log(hit.Dmg);
+        parent.Stats.Hp -= hit.Dmg;
+        if (parent.Stats.Hp <= 0)
             parent.GetComponent<IUnit>().Death();
     }
     public float HitChange(float aim, float acc, float range, float dodge)

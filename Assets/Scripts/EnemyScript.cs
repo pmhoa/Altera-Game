@@ -6,13 +6,16 @@ using UnityEngine.AI;
 public class EnemyScript : MonoBehaviour, IUnit
 {
     // Start is called before the first frame update
-    public UnitStats stats;
+    [SerializeField] private UnitStats stats;
+    public UnitStats Stats { get => stats; set => stats = value; }
+
     [SerializeField] private float moveRange;
     private List<TileScript> tilesInRange = new List<TileScript>();
     private TileScript currentTile;
     private NavMeshAgent agent;
     private MainControl mc;
-    
+    private MoveSet moves = new MoveSet();
+    public MoveSet Moves { get => moves; set => moves = value; }
 
     private void Start()
     {
@@ -45,7 +48,11 @@ public class EnemyScript : MonoBehaviour, IUnit
         gameObject.SetActive(false);
         mc.UpdateUnits();
     }
-
+    public void ResetMoves()
+    {
+        Moves.move = true;
+        Moves.action = true;
+    }
     public void MoveUnit(TileScript tile)
     {
         agent.ResetPath();
@@ -54,6 +61,7 @@ public class EnemyScript : MonoBehaviour, IUnit
             currentTile.Taken = false;
             currentTile.ChangeState(0);
         }
+        Moves.move = false;
         currentTile = tile;
         agent.SetDestination(tile.transform.position);
         tile.Taken = true;
@@ -67,6 +75,7 @@ public class EnemyScript : MonoBehaviour, IUnit
         yield return new WaitForSeconds(0.5f);
         while (agent.remainingDistance != 0)
             yield return null;
+        ResetMoves();
         mc.NextTurn();
     }
 }

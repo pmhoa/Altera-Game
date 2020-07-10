@@ -24,11 +24,15 @@ public class Bullets : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger Coll");
+        //Debug.Log("Trigger Coll");
         if (other.gameObject.GetComponent<IHit>() != null)
         {
             IHit hitobj = other.gameObject.GetComponent<IHit>();
             hitobj.TakeHit(hit);
+            Destroy(gameObject);
+        }
+        else
+        {
             Destroy(gameObject);
         }
     }

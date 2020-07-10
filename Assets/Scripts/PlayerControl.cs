@@ -17,7 +17,6 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit
     public WeaponStats Weapon { get => weapon; }
 
     [SerializeField] private UnitStats stats;
-    public UnitStats Stats { get => stats; }
 
     //private bool playerTurn;
     private MainControl mc;
@@ -29,13 +28,10 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit
 
 
     public bool canShoot;
-    public class MoveSet
-    {
-        public bool move;
-        public bool action;
-    }
+
     private MoveSet moves = new MoveSet();
     public MoveSet Moves { get => moves; set => moves = value; }
+    public UnitStats Stats { get => stats; set => stats = value; }
 
     private void Awake()
     {
