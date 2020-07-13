@@ -10,6 +10,7 @@ public interface IUnit
     void ResetMoves();
     MoveSet Moves {get; set;}
     UnitStats Stats { get; set; }
+    WeaponStats Weapon { get; set; }
 
 }
 public class MoveSet
@@ -29,7 +30,7 @@ public class Hit
 
 public interface ITargetable
 {
-    UnitStats stats();
+    UnitStats targetStats();
     Target Target { get; set; }
     float HitChange(float aim, float acc, float range, float dodge);
 }

@@ -349,10 +349,14 @@ MonoBehaviour:
     - 12
     - 14
     speed: 14
+    melee: 0
   stats:
-    hpmax: 0
+    hpmax: 3
     aim: 10
-    dodge: 0
+    dodge: 3
+  target:
+    targetName: Human
+    hitMod: 1
   rotator: {fileID: 8869721157568009638}
   bulletPf: {fileID: 8140414603763567815, guid: e5bf8fce82804e54683f544277b5b763,
     type: 3}

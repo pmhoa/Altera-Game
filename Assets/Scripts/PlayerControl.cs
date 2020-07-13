@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerControl : MonoBehaviour, IUnit, IHit
+public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
 {
 
     //public CapsuleCollider rangeColl;
@@ -14,9 +14,8 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit
     private LineRenderer line;
     private TileScript currentTile = null;
     [SerializeField] private WeaponStats weapon;
-    public WeaponStats Weapon { get => weapon; }
-
     [SerializeField] private UnitStats stats;
+    [SerializeField] private Target target;
 
     //private bool playerTurn;
     private MainControl mc;
@@ -25,13 +24,13 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit
 
     [SerializeField] private GameObject bulletPf;
     public Transform bulletPoint;
-
-
     public bool canShoot;
 
     private MoveSet moves = new MoveSet();
     public MoveSet Moves { get => moves; set => moves = value; }
     public UnitStats Stats { get => stats; set => stats = value; }
+    public WeaponStats Weapon { get => weapon; set => weapon = value; }
+    public Target Target { get => target; set => target = value; }
 
     private void Awake()
     {
@@ -61,7 +60,16 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit
     }
     public void TakeHit(Hit hit)
     {
+        stats.Hp -= hit.Dmg;
+        if (stats.Hp <= 0)
+        {
+            Death();
+        }
         Debug.Log(hit.Dmg);
+    }
+    public UnitStats targetStats()
+    {
+        return Stats;
     }
     public void StartTurn()
     {

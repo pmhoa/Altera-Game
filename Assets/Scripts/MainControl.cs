@@ -69,6 +69,8 @@ public class MainControl : MonoBehaviour
                 units.Add(unit);
             }
         }
+        if (turnOrder >= units.Count)
+            turnOrder = 0;
     }
     public void TileCheck()
     {

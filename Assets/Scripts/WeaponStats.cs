@@ -10,9 +10,11 @@ public class WeaponStats
     [SerializeField] private float baseDmg;
     [SerializeField] private float[] ranges = new float[5];
     [SerializeField] private float speed;
+    [SerializeField] private bool melee;
 
     public float Accuracy { get => accuracy; set => accuracy = value; }
     public float BaseDmg { get => baseDmg; set => baseDmg = value; }
     public float[] Ranges { get => ranges; set => ranges = value; }
     public float Speed { get => speed; set => speed = value; }
+    public bool Melee { get => melee; set => melee = value; }
 }

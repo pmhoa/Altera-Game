@@ -8,7 +8,7 @@ public class TargetPart : MonoBehaviour, IHit, ITargetable
     [SerializeField] private Target _target;
     public Target Target { get => _target; set => _target = value; }
 
-    public UnitStats stats() { return parent.Stats; }
+    public UnitStats targetStats() { return parent.Stats; }
     private void Start()
     {
         parent = GetComponentInParent<EnemyScript>();

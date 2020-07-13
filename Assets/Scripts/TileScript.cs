@@ -148,7 +148,7 @@ public class TileScript : MonoBehaviour
     {
         mat.color = ucolors[i];
     }
-    public float CalcPathDistance(NavMeshPath path)
+    private float CalcPathDistance(NavMeshPath path)
     {
         float sum = 0;
         for (int i = 1; i < path.corners.Length; i++)

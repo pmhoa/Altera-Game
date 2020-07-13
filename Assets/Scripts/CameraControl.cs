@@ -60,11 +60,11 @@ public class CameraControl : MonoBehaviour
                 {
                     ITargetable targetable = hit.transform.gameObject.GetComponent<ITargetable>();
                     Target tp = targetable.Target;
-                    UnitStats stats = targetable.stats();
+                    UnitStats stats = targetable.targetStats();
                     IUnit cu = mc.currentUnit;
                     hitChange = targetable.HitChange(cu.Stats.Aim, pc.Weapon.Accuracy, pc.HitRange(pc.Weapon, hit.transform), stats.Dodge) * tp.hitMod;
                     pc.bulletPoint.transform.LookAt(hit.point);
-                    ui.targetText.text = $"{tp.targetName} {hitChange * 100:F1}%";
+                    ui.targetText.text = $"{tp.targetName} {hitChange * 100:F1}% \n{stats.Hp}/{stats.Hpmax}";
                     ui.targetText.color = new Color32(240, 100, 100, 255);
                 }
                 else
