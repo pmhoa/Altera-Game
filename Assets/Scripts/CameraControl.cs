@@ -20,6 +20,7 @@ public class CameraControl : MonoBehaviour
     public MainControl mc;
     private UserInterface ui;
     public float hitChange;
+    public ITargetable currentTarget;
 
     private void Start()
     {
@@ -58,29 +59,29 @@ public class CameraControl : MonoBehaviour
             {
                 if (hit.transform.gameObject.GetComponent<ITargetable>() != null)
                 {
-                    ITargetable targetable = hit.transform.gameObject.GetComponent<ITargetable>();
-                    Target tp = targetable.Target;
-                    UnitStats stats = targetable.targetStats();
+                    currentTarget = hit.transform.gameObject.GetComponent<ITargetable>();
+                    Target tp = currentTarget.Target;
+                    UnitStats stats = currentTarget.targetStats();
                     IUnit cu = mc.currentUnit;
-                    hitChange = targetable.HitChange(cu.Stats.Aim, pc.Weapon.Accuracy, pc.HitRange(pc.Weapon, hit.transform), stats.Dodge) * tp.hitMod;
+                    hitChange = currentTarget.HitChange(cu.Stats.Aim, pc.Weapon.Accuracy, pc.HitRange(pc.Weapon, hit.transform), currentTarget);
                     pc.bulletPoint.transform.LookAt(hit.point);
                     ui.targetText.text = $"{tp.targetName} {hitChange * 100:F1}% \n{stats.Hp}/{stats.Hpmax}";
                     ui.targetText.color = new Color32(240, 100, 100, 255);
                 }
                 else
-                {
                     ResetTargetInfo();
-                }
+
             }
             else
-            {
                 ResetTargetInfo();
-            }
+
             ui.crossHairImg.color = ui.targetText.color;
         }
     }
     public void ResetTargetInfo()
     {
+        currentTarget = null;
+        hitChange = 0;
         ui.targetText.text = " ";
         ui.targetText.color = new Color32(255, 255, 255, 255);
     }

@@ -17,11 +17,15 @@ public class EnemyScript : MonoBehaviour, IUnit
     public MoveSet Moves { get => moves; set => moves = value; }
     public UnitStats Stats { get => stats; set => stats = value; }
     public WeaponStats Weapon { get => weapon; set => weapon = value; }
+    public TileScript CurrentTile { get => currentTile; }
+
     private void Start()
     {
         mc = MainControl.Instance;
         stats.Hp = stats.Hpmax;
         agent = GetComponent<NavMeshAgent>();
+        ResetMoves();
+        MoveToClosestTile();
     }
     public List<TileScript> FindTiles()
     {
@@ -35,6 +39,10 @@ public class EnemyScript : MonoBehaviour, IUnit
         }
         return tiles;
     }
+    public void MoveToClosestTile()
+    {
+        MoveUnit(ChooseTile(FindTiles(), agent));
+    }
     public bool control()
     {
         return false;
@@ -47,7 +55,8 @@ public class EnemyScript : MonoBehaviour, IUnit
     public void Death()
     {
         gameObject.SetActive(false);
-        currentTile.Taken = false;
+        if (currentTile)
+            currentTile.Taken = false;
         mc.UpdateUnits();
     }
     public void ResetMoves()
@@ -63,43 +72,33 @@ public class EnemyScript : MonoBehaviour, IUnit
             currentTile.Taken = false;
             currentTile.ChangeState(0);
         }
-        Moves.move = false;
         currentTile = tile;
         agent.SetDestination(tile.transform.position);
         tile.Taken = true;
         tile.ChangeColor(3);
+        Moves.move = false;
     }
     public IEnumerator MoveRotation()
     {
+        ResetMoves();
         yield return new WaitForSeconds(1f);
         PlayerControl apc = NearestPlayer();
         if (apc)
-            Debug.Log(apc.gameObject.name);
-        if (TestAttack(apc.transform.position))
-        {
-            Attack(apc.GetComponent<IHit>(), apc.GetComponent<ITargetable>());
-        }
-        else
-        {
-            MoveUnit(ChooseTile(FindTiles(), apc.Agent));
-            yield return new WaitForSeconds(0.5f);
-            while (agent.remainingDistance != 0)
-                yield return null;
-        }
-
-        yield return new WaitForSeconds(1f);
-
-        if (TestAttack(apc.transform.position) && moves.action)
-        {
-            Attack(apc.GetComponent<IHit>(), apc.GetComponent<ITargetable>());
-        }
-        else if (moves.move)
-        {
-            MoveUnit(ChooseTile(FindTiles(), apc.Agent));
-            yield return new WaitForSeconds(0.5f);
-            while (agent.remainingDistance != 0)
-                yield return null;
-        }
+            while (moves.action || moves.move)
+            {
+                if (TestAttack(apc.transform.position) && moves.action)
+                {
+                    Attack(apc.GetComponent<IHit>(), apc.GetComponent<ITargetable>());
+                }
+                else if (moves.move)
+                {
+                    MoveUnit(ChooseTile(FindTiles(), apc.Agent));
+                    yield return new WaitForSeconds(0.5f);
+                    while (agent.remainingDistance != 0)
+                        yield return null;
+                }
+                yield return new WaitForSeconds(1f);
+            }
         //Debug.Log(TestAttack(apc.transform.position));
 
         yield return new WaitForSeconds(1.25f);
@@ -142,7 +141,7 @@ public class EnemyScript : MonoBehaviour, IUnit
     private void Attack(IHit hitable, ITargetable target)
     {
         float random = Random.value;
-        if (random > target.HitChange(stats.Aim, weapon.Accuracy, 1, target.targetStats().Dodge))
+        if (random > target.HitChange(stats.Aim, weapon.Accuracy, 1, target))
         {
             Hit hit = new Hit();
             hit.Dmg = weapon.BaseDmg;
@@ -166,7 +165,7 @@ public class EnemyScript : MonoBehaviour, IUnit
                 currentDistance = distance;
             }
         }
-        Debug.Log(currentDistance);
+        //Debug.Log(currentDistance);
         return currentTile;
     }
     private Vector3 xzVector(Vector3 vector)

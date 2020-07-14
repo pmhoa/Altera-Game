@@ -8,6 +8,7 @@ public interface IUnit
     void MoveUnit(TileScript tile);
     void Death();
     void ResetMoves();
+    void MoveToClosestTile();
     MoveSet Moves {get; set;}
     UnitStats Stats { get; set; }
     WeaponStats Weapon { get; set; }
@@ -32,7 +33,8 @@ public interface ITargetable
 {
     UnitStats targetStats();
     Target Target { get; set; }
-    float HitChange(float aim, float acc, float range, float dodge);
+    float HitChange(float aim, float acc, float range, ITargetable target);
+    float TileMod();
 }
 
 [System.Serializable]

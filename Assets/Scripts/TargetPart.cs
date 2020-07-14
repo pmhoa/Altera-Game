@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetPart : MonoBehaviour, IHit, ITargetable
 {
-    public EnemyScript parent;
+    private EnemyScript parent;
     [SerializeField] private Target _target;
     public Target Target { get => _target; set => _target = value; }
 
@@ -20,12 +20,17 @@ public class TargetPart : MonoBehaviour, IHit, ITargetable
         if (parent.Stats.Hp <= 0)
             parent.GetComponent<IUnit>().Death();
     }
-    public float HitChange(float aim, float acc, float range, float dodge)
+    public float HitChange(float aim, float acc, float range, ITargetable target)
     {
-        float change = ((aim + acc) / 2 - (dodge + range) / 2 + 5) / 10;
+        UnitStats tStats = target.targetStats();
+        float change = ((aim + acc) / 2 - (tStats.Dodge / target.TileMod() / target.Target.hitMod + range) / 2 + 5) / 10;
         if (change <= 0)
             change = 0.03f;
         return change;
     }
-    
+    public float TileMod()
+    {
+        return parent.CurrentTile.TileMod();
+    }
+
 }

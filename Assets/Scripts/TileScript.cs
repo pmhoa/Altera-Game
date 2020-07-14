@@ -19,6 +19,7 @@ public class TileScript : MonoBehaviour
     private PlayerControl currentPc;
     private MainControl mc;
     private NavMeshPath path;
+    [SerializeField] private Renderer mainTile;
     [SerializeField] private GameObject centerPoint = null;
     [SerializeField] private GameObject iconObj = null;
     [SerializeField] private int tileType;
@@ -26,11 +27,12 @@ public class TileScript : MonoBehaviour
 
     [SerializeField] private bool taken;
     public bool Taken { get => taken; set => taken = value; }
+    public int TileType { get => tileType; set => tileType = value; }
 
     private Transform rotator;
     private void Awake()
     {
-        mat = GetComponent<Renderer>().material;
+        mat = mainTile.material;
         Color[] cols = {
             new Color(mat.color.r, mat.color.g, mat.color.b, mat.color.a),
             new Color(mat.color.r, mat.color.g, mat.color.b, 0.35f),
@@ -41,6 +43,10 @@ public class TileScript : MonoBehaviour
         ucolors.AddRange(cols);
         mc = MainControl.Instance;
         mc.CheckTiles += CheckState;
+    }
+    private void Start()
+    {
+        CheckNavmesh();
     }
     // Update is called once per frame
     void Update()
@@ -89,6 +95,16 @@ public class TileScript : MonoBehaviour
         if (other.tag == "Movement")
         {
             //ChangeState(0);
+        }
+    }
+    public void CheckNavmesh()
+    {
+        NavMeshAgent agent = FindObjectOfType<PlayerControl>().Agent;
+        NavMeshPath path = new NavMeshPath();
+        agent.CalculatePath(transform.position, path);
+        if (path.status != NavMeshPathStatus.PathComplete)
+        {
+            ChangeState(-1);
         }
     }
     public void CheckState()
@@ -147,6 +163,13 @@ public class TileScript : MonoBehaviour
     public void ChangeColor(int i)
     {
         mat.color = ucolors[i];
+    }
+    public float TileMod()
+    {
+        if (tileType == 1)
+            return 0.7f;
+        else
+            return 1f;
     }
     private float CalcPathDistance(NavMeshPath path)
     {

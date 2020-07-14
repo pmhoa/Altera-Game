@@ -83,6 +83,10 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
         gameObject.SetActive(false);
         mc.UpdateUnits();
     }
+    public void MoveToClosestTile()
+    {
+        MoveUnit(MainControl.ChooseTile(MainControl.FindTiles(Agent, range, transform), Agent));
+    }
     public void MoveUnit(TileScript tile)
     {
 
@@ -91,7 +95,6 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
             TileScript lasttile = currentTile;
             lasttile.Taken = false;
         }
-
         currentTile = tile;
         currentTile.Taken = true;
         MovePlayer(tile.transform.position);
@@ -120,15 +123,16 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     }
     public void Fire()
     {
-        if (Moves.action == true)
-            StartCoroutine(FireMain(cam.hitChange));
+        if (Moves.action == true && cam.currentTarget != null)
+            StartCoroutine(FireMain(cam.hitChange, cam.currentTarget.Target));
     }
-    public IEnumerator FireMain(float hitChange)
+    public IEnumerator FireMain(float hitChange, Target target)
     {
         GameObject nbullet = Instantiate(bulletPf, bulletPoint);
         Bullets nb = nbullet.GetComponent<Bullets>();
         nb.speed = weapon.Speed;
-        nb.hit.Dmg = weapon.BaseDmg;
+        float damageCalc = Mathf.Floor(weapon.BaseDmg / target.hitMod);
+        nb.hit.Dmg = damageCalc;
         float hitRandom = Random.value;
         if (hitChange < hitRandom)
             nb.transform.eulerAngles = new Vector3(90, 23, 52);
@@ -188,9 +192,10 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
         Agent.ResetPath();
         line.positionCount = 1;
     }
-    public float HitChange(float aim, float acc, float range, float dodge)
+    public float HitChange(float aim, float acc, float range, ITargetable target)
     {
-        float change = ((aim + acc) / 2 - (dodge + range) / 2 + 5) / 10;
+        UnitStats tStats = target.targetStats();
+        float change = ((aim + acc) / 2 - (tStats.Dodge / target.TileMod() / target.Target.hitMod + range) / 2 + 5) / 10;
         if (change <= 0)
             change = 0.03f;
         return change;
@@ -225,5 +230,9 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
             //Debug.Log(0);
             return -2;
         }
+    }
+    public float TileMod()
+    {
+        return currentTile.TileMod();
     }
 }
