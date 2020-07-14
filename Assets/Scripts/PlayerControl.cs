@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using Mc = MainControl;
 
 public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
 {
@@ -19,7 +18,7 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     [SerializeField] private Target target;
 
     //private bool playerTurn;
-    private Mc mc;
+    private MainControl mc;
     private CameraControl cam;
     public Transform rotator;
 
@@ -39,12 +38,11 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
         Moves.action = true;
         Agent = GetComponent<NavMeshAgent>();
         line = GetComponent<LineRenderer>();
-        mc = Mc.Instance;
+        mc = MainControl.Instance;
         cam = mc.camControl;
     }
     void Start()
     {
-        MoveToClosestTile();
         //rangeColl.radius = range;
         //StartCoroutine(MoveCheck());
     }
@@ -87,9 +85,7 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     }
     public void MoveToClosestTile()
     {
-        Debug.Log(Mc.ChooseTile(Mc.FindTiles(Agent, Range, transform), Agent).gameObject.name);
-
-        //MoveUnit(Main.ChooseTile(Main.FindTiles(Agent, Range, transform), Agent));
+        MoveUnit(MainControl.ChooseTile(MainControl.FindTiles(Agent, range, transform), Agent));
     }
     public void MoveUnit(TileScript tile)
     {
