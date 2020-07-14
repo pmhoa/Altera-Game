@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using Mc = MainControl; //used to make calling static methods shorter
 public class EnemyScript : MonoBehaviour, IUnit
 {
     // Start is called before the first frame update
     [SerializeField] private UnitStats stats;
     [SerializeField] private WeaponStats weapon;
     [SerializeField] private float moveRange;
-    private List<TileScript> tilesInRange = new List<TileScript>();
+    [SerializeField]private List<TileScript> tilesInRange = new List<TileScript>();
     private TileScript currentTile;
     private NavMeshAgent agent;
     private MainControl mc;
@@ -26,6 +26,7 @@ public class EnemyScript : MonoBehaviour, IUnit
         agent = GetComponent<NavMeshAgent>();
         ResetMoves();
         MoveToClosestTile();
+        //tilesInRange = FindTiles();
     }
     public List<TileScript> FindTiles()
     {
@@ -38,6 +39,22 @@ public class EnemyScript : MonoBehaviour, IUnit
             }
         }
         return tiles;
+    }
+    private TileScript ChooseTile(List<TileScript> tiles, NavMeshAgent targetAgent)
+    {
+        TileScript current = null;
+        float currentDistance = float.MaxValue;
+        foreach (TileScript ts in tiles)
+        {
+            float distance = WalkDistance(ts.transform.position, targetAgent);
+            if (distance <= currentDistance)
+            {
+                current = ts;
+                currentDistance = distance;
+            }
+        }
+        Debug.Log(currentDistance);
+        return current;
     }
     public void MoveToClosestTile()
     {
@@ -152,22 +169,7 @@ public class EnemyScript : MonoBehaviour, IUnit
             Debug.Log("Failed Attack");
 
     }
-    private TileScript ChooseTile(List<TileScript> tiles, NavMeshAgent targetAgent)
-    {
-        TileScript currentTile = null;
-        float currentDistance = float.MaxValue;
-        foreach (TileScript ts in tiles)
-        {
-            float distance = WalkDistance(ts.transform.position, targetAgent);
-            if (distance <= currentDistance)
-            {
-                currentTile = ts;
-                currentDistance = distance;
-            }
-        }
-        //Debug.Log(currentDistance);
-        return currentTile;
-    }
+
     private Vector3 xzVector(Vector3 vector)
     {
         return new Vector3(vector.x, 0, vector.z);
