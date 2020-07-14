@@ -59,6 +59,7 @@ public class TileScript : MonoBehaviour
         if (InRange && !Taken)
         {
             mc.currentUnit.MoveUnit(this);
+            mc.currentUnit.Moves.move = false;
         }
     }
     private void OnMouseEnter()
@@ -111,6 +112,7 @@ public class TileScript : MonoBehaviour
     {
         currentPc = mc.currentPc;
         //Debug.Log("state checked");
+        currentPc.Agent.enabled = true;
         InRange = CheckPcRange(currentPc);
         if (state != -1)
         {

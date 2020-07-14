@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Mc = MainControl;
 
 public class EnemyScript : MonoBehaviour, IUnit
 {
@@ -10,7 +11,7 @@ public class EnemyScript : MonoBehaviour, IUnit
     [SerializeField] private WeaponStats weapon;
     [SerializeField] private float moveRange;
     private List<TileScript> tilesInRange = new List<TileScript>();
-    private TileScript currentTile;
+    [SerializeField] private TileScript currentTile;
     private NavMeshAgent agent;
     private MainControl mc;
     private MoveSet moves = new MoveSet();
@@ -25,23 +26,28 @@ public class EnemyScript : MonoBehaviour, IUnit
         stats.Hp = stats.Hpmax;
         agent = GetComponent<NavMeshAgent>();
         ResetMoves();
-        MoveToClosestTile();
+        StartCoroutine(ClosestWait());
     }
     public List<TileScript> FindTiles()
     {
         List<TileScript> tiles = new List<TileScript>();
         foreach (TileScript tile in FindObjectsOfType<TileScript>())
         {
-            if (tile.CheckRange(moveRange, agent, transform) && !tile.Taken)
+            if (tile.CheckRange(moveRange, agent, transform) && !tile.Taken && tile.gameObject.activeSelf)
             {
                 tiles.Add(tile);
             }
         }
         return tiles;
     }
+    public IEnumerator ClosestWait()
+    {
+        yield return new WaitForSeconds(0.33f);
+        MoveToClosestTile();
+    }
     public void MoveToClosestTile()
     {
-        MoveUnit(ChooseTile(FindTiles(), agent));
+        MoveUnit(Mc.ChooseTile(Mc.FindTiles(agent, moveRange, transform), agent));
     }
     public bool control()
     {
@@ -57,6 +63,7 @@ public class EnemyScript : MonoBehaviour, IUnit
         gameObject.SetActive(false);
         if (currentTile)
             currentTile.Taken = false;
+        currentTile.CheckState();
         mc.UpdateUnits();
     }
     public void ResetMoves()
@@ -77,6 +84,13 @@ public class EnemyScript : MonoBehaviour, IUnit
         tile.Taken = true;
         tile.ChangeColor(3);
         Moves.move = false;
+        StartCoroutine(MoveUnitRoutine());
+    }
+    public IEnumerator MoveUnitRoutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        while (agent.remainingDistance != 0)
+            yield return null;
     }
     public IEnumerator MoveRotation()
     {
@@ -84,7 +98,7 @@ public class EnemyScript : MonoBehaviour, IUnit
         yield return new WaitForSeconds(1f);
         PlayerControl apc = NearestPlayer();
         if (apc)
-            while (moves.action || moves.move)
+            while ((moves.action && TestAttack(apc.transform.position)) || moves.move)
             {
                 if (TestAttack(apc.transform.position) && moves.action)
                 {
@@ -93,9 +107,6 @@ public class EnemyScript : MonoBehaviour, IUnit
                 else if (moves.move)
                 {
                     MoveUnit(ChooseTile(FindTiles(), apc.Agent));
-                    yield return new WaitForSeconds(0.5f);
-                    while (agent.remainingDistance != 0)
-                        yield return null;
                 }
                 yield return new WaitForSeconds(1f);
             }
@@ -146,10 +157,10 @@ public class EnemyScript : MonoBehaviour, IUnit
             Hit hit = new Hit();
             hit.Dmg = weapon.BaseDmg;
             hitable.TakeHit(hit);
-            moves.action = false;
         }
         else
             Debug.Log("Failed Attack");
+        moves.action = false;
 
     }
     private TileScript ChooseTile(List<TileScript> tiles, NavMeshAgent targetAgent)
@@ -178,18 +189,21 @@ public class EnemyScript : MonoBehaviour, IUnit
         float currentDistance = 0;
         foreach (PlayerControl pc in FindObjectsOfType<PlayerControl>())
         {
-            Transform pct = pc.transform;
-            Vector3 pcXzPosition = xzVector(pct.position);
-            float distance = WalkDistance(pcXzPosition, agent);
-            if (currentDistance == 0)
+            if (pc.transform.gameObject.activeSelf)
             {
-                currentPlayer = pc;
-                currentDistance = distance;
-            }
-            else if (currentDistance > distance)
-            {
-                currentPlayer = pc;
-                currentDistance = distance;
+                Transform pct = pc.transform;
+                Vector3 pcXzPosition = xzVector(pct.position);
+                float distance = WalkDistance(pcXzPosition, agent);
+                if (currentDistance == 0)
+                {
+                    currentPlayer = pc;
+                    currentDistance = distance;
+                }
+                else if (currentDistance > distance)
+                {
+                    currentPlayer = pc;
+                    currentDistance = distance;
+                }
             }
         }
         return currentPlayer;

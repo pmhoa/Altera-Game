@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using Mc = MainControl;
 public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
 {
 
@@ -45,6 +45,7 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     {
         //rangeColl.radius = range;
         //StartCoroutine(MoveCheck());
+        StartCoroutine(ClosestWait());
     }
     private void Update()
     {
@@ -83,9 +84,14 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
         gameObject.SetActive(false);
         mc.UpdateUnits();
     }
+    public IEnumerator ClosestWait()
+    {
+        yield return new WaitForSeconds(0.33f);
+        MoveToClosestTile();
+    }
     public void MoveToClosestTile()
     {
-        MoveUnit(MainControl.ChooseTile(MainControl.FindTiles(Agent, range, transform), Agent));
+        MoveUnit(Mc.ChooseTile(Mc.FindTiles(Agent, range, transform), Agent));
     }
     public void MoveUnit(TileScript tile)
     {
@@ -116,7 +122,6 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
         while (Agent.remainingDistance != 0)
             yield return null;
         moving = false;
-        Moves.move = false;
         mc.TileCheck();
         UserInterface.Instance.turn.interactable = true;
         //EndTurn();

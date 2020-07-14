@@ -79,6 +79,8 @@ public class MainControl : MonoBehaviour
     }
     public void NextTurn()
     {
+        playerTurn = false;
+        CheckTiles();
         ui.turn.interactable = false;
         GameObject cu = units[turnOrder];
         currentUnitObj = cu;
