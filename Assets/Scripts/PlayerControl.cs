@@ -44,6 +44,7 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     {
         //rangeColl.radius = range;
         //StartCoroutine(MoveCheck());
+        stats.Hp = stats.Hpmax;
         StartCoroutine(ClosestWait());
     }
     private void Update()
@@ -60,6 +61,7 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     }
     public void TakeHit(Hit hit)
     {
+        mc.SpawnText(hit.Dmg.ToString(), transform.position);
         stats.Hp -= hit.Dmg;
         if (stats.Hp <= 0)
         {
@@ -144,7 +146,10 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
         nb.hit.Dmg = damageCalc;
         float hitRandom = Random.value;
         if (hitChange < hitRandom)
+        {
             nb.transform.eulerAngles = new Vector3(90, 23, 52);
+            mc.SpawnText("Miss!", transform.position);
+        }
         nb.Fire();
         nbullet.transform.SetParent(null);
         canShoot = false;

@@ -16,6 +16,7 @@ public class TargetPart : MonoBehaviour, IHit, ITargetable
     public void TakeHit(Hit hit)
     {
         //Debug.Log(hit.Dmg);
+        MainControl.Instance.SpawnText(hit.Dmg.ToString(), transform.position);
         parent.Stats.Hp -= hit.Dmg;
         if (parent.Stats.Hp <= 0)
             parent.GetComponent<IUnit>().Death();

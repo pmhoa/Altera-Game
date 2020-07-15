@@ -28,6 +28,7 @@ public class EnemyScript : MonoBehaviour, IUnit
         agent = GetComponent<NavMeshAgent>();
         ResetMoves();
         StartCoroutine("OutOfCombatRoutine");
+        mc.CombatStart += CombatStart;
         //StartCoroutine(ClosestWait());
     }
     public List<TileScript> FindTiles()
@@ -54,6 +55,10 @@ public class EnemyScript : MonoBehaviour, IUnit
     public bool control()
     {
         return false;
+    }
+    public void CombatStart()
+    {
+        StopCoroutine("OutOfCombatRoutine");
     }
     public void StartTurn()
     {
@@ -156,7 +161,7 @@ public class EnemyScript : MonoBehaviour, IUnit
             hitable.TakeHit(hit);
         }
         else
-            Debug.Log("Failed Attack");
+            mc.SpawnText("Miss!", transform.position);
         moves.action = false;
     }
 

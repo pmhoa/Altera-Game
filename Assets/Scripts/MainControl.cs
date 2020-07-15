@@ -37,7 +37,7 @@ public class MainControl : MonoBehaviour
     public bool playerTurn;
     public bool combat;
     private List<TileScript> tiles = new List<TileScript>();
-
+    [SerializeField] public GameObject FloatTextPrefab;
 
     // Start is called before the first frame update
     private void Awake()
@@ -172,5 +172,11 @@ public class MainControl : MonoBehaviour
     public static Vector3 xzVector(Vector3 vector)
     {
         return new Vector3(vector.x, 0, vector.z);
+    }
+    public void SpawnText(string value, Vector3 pos)
+    {
+        GameObject NewText = Instantiate(FloatTextPrefab);
+        NewText.transform.position = pos + new Vector3(0,2,0);
+        NewText.GetComponent<FloatingText>().StartFloat(value);
     }
 }

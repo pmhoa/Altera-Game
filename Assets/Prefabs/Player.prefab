@@ -349,7 +349,7 @@ MonoBehaviour:
     speed: 25
     melee: 0
   stats:
-    hpmax: 3
+    hpmax: 5
     aim: 6
     dodge: 3
     moveRange: 4.1
@@ -364,6 +364,7 @@ MonoBehaviour:
   moves:
     moving: 0
     move: 0
+    aiming: 0
     action: 0
 --- !u!120 &8869721157737501641
 LineRenderer:
