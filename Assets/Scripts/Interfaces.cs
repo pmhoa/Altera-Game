@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public interface IUnit
 {
@@ -12,11 +13,16 @@ public interface IUnit
     MoveSet Moves {get; set;}
     UnitStats Stats { get; set; }
     WeaponStats Weapon { get; set; }
-
+    NavMeshAgent Agent { get; set; }
+    Transform UnitTransform();
 }
+[System.Serializable]
 public class MoveSet
 {
+    public bool moving;
     public bool move;
+
+    public bool aiming;
     public bool action;
 }
 public interface IHit
@@ -35,6 +41,7 @@ public interface ITargetable
     Target Target { get; set; }
     float HitChange(float aim, float acc, float range, ITargetable target);
     float TileMod();
+    Transform TargetTransform();
 }
 
 [System.Serializable]

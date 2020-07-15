@@ -279,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8869721157737501648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8869721157684319101}
@@ -337,23 +337,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6915864e24d764fabd56e9b90b9462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 4.1
-  Agent: {fileID: 0}
   weapon:
-    accuracy: 4
-    baseDmg: 3
+    accuracy: 6
+    baseDmg: 4
     ranges:
     - 0
     - 2
     - 6
     - 12
     - 14
-    speed: 14
+    speed: 25
     melee: 0
   stats:
     hpmax: 3
-    aim: 4
+    aim: 6
     dodge: 3
+    moveRange: 4.1
   target:
     targetName: Human
     hitMod: 1
@@ -362,6 +361,10 @@ MonoBehaviour:
     type: 3}
   bulletPoint: {fileID: 9042535841386597460}
   canShoot: 0
+  moves:
+    moving: 0
+    move: 0
+    action: 0
 --- !u!120 &8869721157737501641
 LineRenderer:
   m_ObjectHideFlags: 0

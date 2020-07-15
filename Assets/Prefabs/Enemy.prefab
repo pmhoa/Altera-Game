@@ -58,7 +58,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1071b22fe6b80324ba2ac1081a98e1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   _target:
     targetName: Head
     hitMod: 0.65
@@ -136,7 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1071b22fe6b80324ba2ac1081a98e1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   _target:
     targetName: Body
     hitMod: 1
@@ -250,6 +248,7 @@ MonoBehaviour:
     speed: 0
     melee: 1
   moveRange: 6
+  currentTile: {fileID: 0}
 --- !u!195 &8296172667855293776
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -342,7 +341,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 9b138b4bd300b7440a0453b615181130,
         type: 3}
       propertyPath: m_Name
-      value: Golf
+      value: Defualt Model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b138b4bd300b7440a0453b615181130, type: 3}

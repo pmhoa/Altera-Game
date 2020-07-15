@@ -22,6 +22,10 @@ public class MainControl : MonoBehaviour
 
     public delegate void MainEvents();
     public MainEvents CheckTiles;
+    public MainEvents CombatStart;
+
+    public delegate void UnitEvent(IUnit unit);
+    public UnitEvent CheckUnitTiles;
 
     private UserInterface ui;
     public CameraControl camControl;
@@ -31,6 +35,7 @@ public class MainControl : MonoBehaviour
     public GameObject currentUnitObj;
     public IUnit currentUnit;
     public bool playerTurn;
+    public bool combat;
     private List<TileScript> tiles = new List<TileScript>();
 
 
@@ -51,14 +56,14 @@ public class MainControl : MonoBehaviour
         foreach (PlayerControl unit in FindObjectsOfType<PlayerControl>())
         {
             currentPc = unit;
+            currentUnit = unit.GetComponent<IUnit>();
             camControl.pc = unit;
         }
-        UpdateUnits();
 
     }
     void Start()
     {
-        NextTurn();
+        //NextTurn();
     }
     public void UpdateUnits()
     {
@@ -75,12 +80,24 @@ public class MainControl : MonoBehaviour
     }
     public void TileCheck()
     {
-        if (CheckTiles != null) CheckTiles.Invoke();
+        //if (CheckTiles != null) CheckTiles.Invoke();
+        CheckTiles?.Invoke();
+    }
+    public void TileUnitCheck(IUnit unit)
+    {
+        CheckUnitTiles?.Invoke(unit);
+    }
+    public void StartCombat()
+    {
+        CombatStart?.Invoke();
+        UpdateUnits();
+        combat = true;
+        NextTurn();
     }
     public void NextTurn()
     {
         playerTurn = false;
-        CheckTiles();
+        TileUnitCheck(currentUnit);
         ui.turn.interactable = false;
         GameObject cu = units[turnOrder];
         currentUnitObj = cu;
@@ -92,6 +109,7 @@ public class MainControl : MonoBehaviour
         else
             turnOrder++;
     }
+
     public void ChangePlayer(PlayerControl pc)
     {
         currentPc = pc;
@@ -135,6 +153,10 @@ public class MainControl : MonoBehaviour
         //Debug.Log(currentDistance);
         return currentTile;
     }
+    public static TileScript ChooseRandomTile(List<TileScript> tiles)
+    {
+        return tiles[Random.Range(0, tiles.Count)];
+    }
     public static List<TileScript> FindTiles(NavMeshAgent agent, float moveRange, Transform transformPos)
     {
         List<TileScript> tiles = new List<TileScript>();
@@ -146,5 +168,9 @@ public class MainControl : MonoBehaviour
             }
         }
         return tiles;
+    }
+    public static Vector3 xzVector(Vector3 vector)
+    {
+        return new Vector3(vector.x, 0, vector.z);
     }
 }

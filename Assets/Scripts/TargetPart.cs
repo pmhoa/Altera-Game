@@ -30,7 +30,14 @@ public class TargetPart : MonoBehaviour, IHit, ITargetable
     }
     public float TileMod()
     {
-        return parent.CurrentTile.TileMod();
+        if (parent.CurrentTile != null)
+            return parent.CurrentTile.TileMod();
+        else 
+            return 1;
+    }
+    public Transform TargetTransform()
+    {
+        return parent.transform;
     }
 
 }

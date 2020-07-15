@@ -19,14 +19,16 @@ public class EnemyScript : MonoBehaviour, IUnit
     public UnitStats Stats { get => stats; set => stats = value; }
     public WeaponStats Weapon { get => weapon; set => weapon = value; }
     public TileScript CurrentTile { get => currentTile; }
+    public NavMeshAgent Agent { get => agent; set => agent = value; }
 
     private void Start()
     {
-        mc = MainControl.Instance;
+        mc = Mc.Instance;
         stats.Hp = stats.Hpmax;
         agent = GetComponent<NavMeshAgent>();
         ResetMoves();
-        StartCoroutine(ClosestWait());
+        StartCoroutine("OutOfCombatRoutine");
+        //StartCoroutine(ClosestWait());
     }
     public List<TileScript> FindTiles()
     {
@@ -55,6 +57,7 @@ public class EnemyScript : MonoBehaviour, IUnit
     }
     public void StartTurn()
     {
+        StopCoroutine("OutOfCombatRoutine");
         StopCoroutine("MoveRotation");
         StartCoroutine("MoveRotation");
     }
@@ -71,6 +74,18 @@ public class EnemyScript : MonoBehaviour, IUnit
         Moves.move = true;
         Moves.action = true;
     }
+    public IEnumerator OutOfCombatRoutine()
+    {
+        while (!mc.combat)
+        {
+            yield return new WaitForSeconds(Random.Range(2f, 6f));
+            MoveUnit(Mc.ChooseRandomTile(FindUnitTiles()));
+        }
+    }
+    public List<TileScript> FindUnitTiles()
+    {
+        return Mc.FindTiles(agent, moveRange, transform);
+    }
     public void MoveUnit(TileScript tile)
     {
         agent.ResetPath();
@@ -84,6 +99,7 @@ public class EnemyScript : MonoBehaviour, IUnit
         tile.Taken = true;
         tile.ChangeColor(3);
         Moves.move = false;
+        moves.moving = true;
         StartCoroutine(MoveUnitRoutine());
     }
     public IEnumerator MoveUnitRoutine()
@@ -91,6 +107,7 @@ public class EnemyScript : MonoBehaviour, IUnit
         yield return new WaitForSeconds(0.5f);
         while (agent.remainingDistance != 0)
             yield return null;
+        moves.moving = false;
     }
     public IEnumerator MoveRotation()
     {
@@ -100,13 +117,13 @@ public class EnemyScript : MonoBehaviour, IUnit
         if (apc)
             while ((moves.action && TestAttack(apc.transform.position)) || moves.move)
             {
-                if (TestAttack(apc.transform.position) && moves.action)
+                if (TestAttack(apc.transform.position) && moves.action && !moves.moving)
                 {
                     Attack(apc.GetComponent<IHit>(), apc.GetComponent<ITargetable>());
                 }
                 else if (moves.move)
                 {
-                    MoveUnit(ChooseTile(FindTiles(), apc.Agent));
+                    MoveUnit(Mc.ChooseTile(FindTiles(), apc.Agent));
                 }
                 yield return new WaitForSeconds(1f);
             }
@@ -116,26 +133,8 @@ public class EnemyScript : MonoBehaviour, IUnit
         ResetMoves();
         mc.NextTurn();
     }
-    private float WalkDistance(Vector3 to, NavMeshAgent usedAgent)
-    {
-        NavMeshPath path = new NavMeshPath();
-        usedAgent.CalculatePath(to, path);
-        return CalcPathDistance(path);
-    }
-    private float CalcPathDistance(NavMeshPath path)
-    {
-        float sum = 0;
-        for (int i = 1; i < path.corners.Length; i++)
-        {
-            Vector3 xzpos1 = new Vector3(path.corners[i].x, 0, path.corners[i].z);
-            Vector3 xzpos2 = new Vector3(path.corners[i - 1].x, 0, path.corners[i - 1].z);
-            sum += Vector3.Distance(xzpos2, xzpos1);
-        }
-        return sum;
-    }
     private bool TestAttack(Vector3 targetPos)
     {
-        transform.LookAt(xzVector(targetPos));
         if (weapon.Melee)
         {
             if (weapon.Ranges[0] >= Vector3.Distance(transform.position, targetPos))
@@ -144,13 +143,11 @@ public class EnemyScript : MonoBehaviour, IUnit
                 return false;
         }
         else
-        {
             return true;
-        }
-
     }
     private void Attack(IHit hitable, ITargetable target)
     {
+        transform.LookAt(Mc.xzVector(target.TargetTransform().position));
         float random = Random.value;
         if (random > target.HitChange(stats.Aim, weapon.Accuracy, 1, target))
         {
@@ -161,28 +158,8 @@ public class EnemyScript : MonoBehaviour, IUnit
         else
             Debug.Log("Failed Attack");
         moves.action = false;
+    }
 
-    }
-    private TileScript ChooseTile(List<TileScript> tiles, NavMeshAgent targetAgent)
-    {
-        TileScript currentTile = null;
-        float currentDistance = float.MaxValue;
-        foreach (TileScript ts in tiles)
-        {
-            float distance = WalkDistance(ts.transform.position, targetAgent);
-            if (distance <= currentDistance)
-            {
-                currentTile = ts;
-                currentDistance = distance;
-            }
-        }
-        //Debug.Log(currentDistance);
-        return currentTile;
-    }
-    private Vector3 xzVector(Vector3 vector)
-    {
-        return new Vector3(vector.x, 0, vector.z);
-    }
     private PlayerControl NearestPlayer()
     {
         PlayerControl currentPlayer = null;
@@ -192,8 +169,8 @@ public class EnemyScript : MonoBehaviour, IUnit
             if (pc.transform.gameObject.activeSelf)
             {
                 Transform pct = pc.transform;
-                Vector3 pcXzPosition = xzVector(pct.position);
-                float distance = WalkDistance(pcXzPosition, agent);
+                Vector3 pcXzPosition = Mc.xzVector(pct.position);
+                float distance = Mc.WalkDistance(pcXzPosition, agent);
                 if (currentDistance == 0)
                 {
                     currentPlayer = pc;
@@ -207,5 +184,9 @@ public class EnemyScript : MonoBehaviour, IUnit
             }
         }
         return currentPlayer;
+    }
+    public Transform UnitTransform()
+    {
+        return transform;
     }
 }

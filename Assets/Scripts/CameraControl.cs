@@ -30,6 +30,8 @@ public class CameraControl : MonoBehaviour
         mouseYInputName = "Mouse Y";
         ui = UserInterface.Instance;
         mc = MainControl.Instance;
+        mc.CombatStart += ResetCam;
+
     }
     void Update()
     {
@@ -41,11 +43,11 @@ public class CameraControl : MonoBehaviour
             if (!camLock)
                 CameraRotation();
         }
-        if (mc.playerTurn)
+        if (mc.playerTurn || !mc.combat)
         {
             if (Input.GetMouseButtonDown(1) && !camLock)
             {
-                ChangeCam();
+                SwapCam();
             }
         }
 
@@ -85,33 +87,42 @@ public class CameraControl : MonoBehaviour
         ui.targetText.text = " ";
         ui.targetText.color = new Color32(255, 255, 255, 255);
     }
-    public void ChangeCam()
+    public void ResetCam()
     {
-        if (!changing && !pc.moving)
+        ChangeCam(false);
+    }
+    public void SwapCam()
+    {
+        if (zoom)
+            ChangeCam(false);
+        else
+            ChangeCam(true);
+    }
+    public void ChangeCam(bool toZoom)
+    {
+        if (!changing && !pc.Moves.moving)
         {
-            if (zoom)
+            if (!toZoom)
             {
                 StartCoroutine(ChangeCamRoutine(zoomedOut, 65f));
                 zoom = false;
                 pc.canShoot = false;
-
+                mc.currentUnit.Moves.aiming = false;
             }
             else
             {
+                pc.ResetPath();
                 StartCoroutine(ChangeCamRoutine(zoomedIn, 0));
                 zoom = true;
                 pc.canShoot = true;
-
+                mc.currentUnit.Moves.aiming = true;
             }
         }
 
     }
-    public void LockCam()
+    public void LockCam(bool toLock)
     {
-        if (camLock)
-            camLock = false;
-        else
-            camLock = true;
+        camLock = toLock;
     }
     public IEnumerator ChangeCamRoutine(Vector3 newset, float rotation)
     {

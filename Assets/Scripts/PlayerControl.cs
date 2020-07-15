@@ -7,16 +7,13 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
 {
 
     //public CapsuleCollider rangeColl;
-    [SerializeField] private float range = 0;
-    public float Range { get => range; }
-    public NavMeshAgent Agent;
-    public bool moving { get; set; }
+    private NavMeshAgent agent;
     private LineRenderer line;
     private TileScript currentTile = null;
     [SerializeField] private WeaponStats weapon;
     [SerializeField] private UnitStats stats;
     [SerializeField] private Target target;
-
+    private IUnit punit;
     //private bool playerTurn;
     private MainControl mc;
     private CameraControl cam;
@@ -26,11 +23,12 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     public Transform bulletPoint;
     public bool canShoot;
 
-    private MoveSet moves = new MoveSet();
+    [SerializeField] private MoveSet moves = new MoveSet();
     public MoveSet Moves { get => moves; set => moves = value; }
     public UnitStats Stats { get => stats; set => stats = value; }
     public WeaponStats Weapon { get => weapon; set => weapon = value; }
     public Target Target { get => target; set => target = value; }
+    public NavMeshAgent Agent { get => agent; set => agent = value; }
 
     private void Awake()
     {
@@ -40,6 +38,7 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
         line = GetComponent<LineRenderer>();
         mc = MainControl.Instance;
         cam = mc.camControl;
+        punit = GetComponent<IUnit>();
     }
     void Start()
     {
@@ -75,9 +74,10 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     public void StartTurn()
     {
         //playerTurn = true;
+        ResetMoves();
         mc.ChangePlayer(this);
         mc.playerTurn = true;
-        mc.TileCheck();
+        mc.TileUnitCheck(punit);
     }
     public void Death()
     {
@@ -91,26 +91,29 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     }
     public void MoveToClosestTile()
     {
-        MoveUnit(Mc.ChooseTile(Mc.FindTiles(Agent, range, transform), Agent));
+        MoveUnit(Mc.ChooseTile(Mc.FindTiles(Agent, stats.MoveRange, transform), Agent));
     }
     public void MoveUnit(TileScript tile)
     {
-
-        if (currentTile)
+        if (!moves.moving)
         {
-            TileScript lasttile = currentTile;
-            lasttile.Taken = false;
+            if (currentTile)
+            {
+                TileScript lasttile = currentTile;
+                lasttile.LeaveTile();
+            }
+            currentTile = tile;
+            currentTile.Taken = true;
+            MovePlayer(tile.transform.position);
         }
-        currentTile = tile;
-        currentTile.Taken = true;
-        MovePlayer(tile.transform.position);
+
 
     }
     public void MovePlayer(Vector3 pos)
     {
-        if (!moving && Agent.enabled == true && Moves.move == true)
+        if (!moves.moving && Agent.enabled == true)
         {
-            moving = true;
+            moves.moving = true;
             ResetPath();
             Agent.SetDestination(pos);
             StartCoroutine(MoveCheck());
@@ -119,10 +122,11 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     public IEnumerator MoveCheck()
     {
         yield return new WaitForEndOfFrame();
+        mc.TileUnitCheck(punit);
         while (Agent.remainingDistance != 0)
             yield return null;
-        moving = false;
-        mc.TileCheck();
+        moves.moving = false;
+        mc.TileUnitCheck(punit);
         UserInterface.Instance.turn.interactable = true;
         //EndTurn();
     }
@@ -144,15 +148,18 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
         nb.Fire();
         nbullet.transform.SetParent(null);
         canShoot = false;
-        cam.LockCam();
+        cam.LockCam(true);
         Moves.action = false;
         yield return new WaitForSeconds(1.5f);
-        cam.ChangeCam();
-        cam.LockCam();
+        cam.ChangeCam(false);
+        cam.LockCam(false);
+        if (!mc.combat)
+            mc.StartCombat();
+
     }
     public void EndTurn()
     {
-        if (!moving)
+        if (!moves.moving && mc.combat)
         {
             mc.NextTurn();
             ResetMoves();
@@ -166,7 +173,7 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     }
     public void PathLine(NavMeshPath path)
     {
-        if (!moving)
+        if (!moves.moving)
             StartCoroutine(DrawPath(path));
     }
     public IEnumerator DrawPath(NavMeshPath path)
@@ -192,7 +199,7 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
             yield return null;
         }
     }
-    private void ResetPath()
+    public void ResetPath()
     {
         Agent.ResetPath();
         line.positionCount = 1;
@@ -239,5 +246,13 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     public float TileMod()
     {
         return currentTile.TileMod();
+    }
+    public Transform TargetTransform()
+    {
+        return transform;
+    }
+    public Transform UnitTransform()
+    {
+        return transform;
     }
 }
