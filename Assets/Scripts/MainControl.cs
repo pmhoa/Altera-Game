@@ -72,7 +72,22 @@ public class MainControl : MonoBehaviour
         {
             if (unit.GetComponent<IUnit>() != null && unit.activeSelf)
             {
+                IUnit cunit = unit.GetComponent<IUnit>();
                 units.Add(unit);
+            }
+        }
+        if (turnOrder >= units.Count)
+            turnOrder = 0;
+    }
+    public void FindUnits(Transform origin)
+    {
+        units.Clear();
+        foreach (GameObject unit in FindObjectsOfType<GameObject>())
+        {
+            if (unit.GetComponent<IUnit>() != null && unit.activeSelf)
+            {
+                IUnit cunit = unit.GetComponent<IUnit>();
+                units.Add(cunit.JoinCombat(origin));
             }
         }
         if (turnOrder >= units.Count)

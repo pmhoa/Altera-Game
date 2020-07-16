@@ -73,6 +73,15 @@ public class PlayerControl : MonoBehaviour, IUnit, IHit, ITargetable
     {
         return Stats;
     }
+    public GameObject JoinCombat(Transform combatOrigin)
+    {
+        if (Vector3.Distance(transform.position, combatOrigin.position) < stats.MoveRange * 2)
+        {
+            return gameObject;
+        }
+        else
+            return null;
+    }
     public void StartTurn()
     {
         //playerTurn = true;

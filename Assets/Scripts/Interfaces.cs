@@ -10,6 +10,7 @@ public interface IUnit
     void Death();
     void ResetMoves();
     void MoveToClosestTile();
+    GameObject JoinCombat(Transform combatOrigin);
     MoveSet Moves {get; set;}
     UnitStats Stats { get; set; }
     WeaponStats Weapon { get; set; }

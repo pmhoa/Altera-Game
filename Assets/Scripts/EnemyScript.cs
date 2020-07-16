@@ -12,6 +12,7 @@ public class EnemyScript : MonoBehaviour, IUnit
     [SerializeField] private float moveRange;
     private List<TileScript> tilesInRange = new List<TileScript>();
     [SerializeField] private TileScript currentTile;
+    [SerializeField] private Transform rayPos;
     private NavMeshAgent agent;
     private MainControl mc;
     private MoveSet moves = new MoveSet();
@@ -59,6 +60,7 @@ public class EnemyScript : MonoBehaviour, IUnit
     public void CombatStart()
     {
         StopCoroutine("OutOfCombatRoutine");
+        StopCoroutine("FindPlayer");
     }
     public void StartTurn()
     {
@@ -81,11 +83,31 @@ public class EnemyScript : MonoBehaviour, IUnit
     }
     public IEnumerator OutOfCombatRoutine()
     {
+        StartCoroutine("FindPlayer");
         while (!mc.combat)
         {
             yield return new WaitForSeconds(Random.Range(2f, 6f));
             MoveUnit(Mc.ChooseRandomTile(FindUnitTiles()));
         }
+    }
+    public IEnumerator FindPlayer()
+    {
+        while (!mc.combat)
+        {
+            yield return new WaitForSeconds(0.25f);
+            if (SeePlayer() != null)
+                mc.StartCombat();
+        }
+
+    }
+    public GameObject JoinCombat(Transform combatOrigin)
+    {
+        if (Vector3.Distance(transform.position, combatOrigin.position) < stats.MoveRange * 2)
+        {
+            return gameObject;
+        }
+        else 
+            return null;
     }
     public List<TileScript> FindUnitTiles()
     {
@@ -193,5 +215,51 @@ public class EnemyScript : MonoBehaviour, IUnit
     public Transform UnitTransform()
     {
         return transform;
+    }
+    public PlayerControl SeePlayer()
+    {
+        PlayerControl[] playerInScene = FindObjectsOfType<PlayerControl>();
+        List<PlayerControl> viablePc = new List<PlayerControl>();
+        foreach (PlayerControl pc in playerInScene)
+        {
+            Vector3 pAngle = pc.gameObject.transform.position - transform.position;
+            Vector3 eAngle = transform.forward * 8f;
+
+            float angle = Vector3.Angle(pAngle, eAngle);
+            if (angle <= 65f)
+            {
+                //Debug.Log(pc.gameObject.name);
+                float distance = Vector3.Distance(Mc.xzVector(transform.position), Mc.xzVector(pc.gameObject.transform.position));
+                //Debug.Log(distance);
+                if (distance < 8f)
+                    viablePc.Add(pc);
+            }
+            //Debug.Log(gameObject.name + " " + angle);
+        }
+        if (viablePc.Count > 0)
+        {
+            PlayerControl currentPc = null;
+            float currentDistance = 200;
+            foreach (PlayerControl pc in viablePc)
+            {
+                RaycastHit hit;
+                if (Physics.Linecast(rayPos.position, pc.gameObject.transform.position, out hit))
+                {
+                    Debug.Log(hit.collider.gameObject.name);
+                    if (hit.distance <= currentDistance && hit.collider.gameObject.GetComponent<PlayerControl>())
+                    {
+                        currentDistance = hit.distance;
+                        currentPc = pc;
+                    }
+                }
+                Debug.Log(currentDistance);
+            }
+            if (currentPc)
+                return currentPc;
+            else
+                return null;
+        }
+        else
+            return null;
     }
 }
